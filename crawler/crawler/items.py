@@ -11,9 +11,9 @@ class CrawlerItem(scrapy.Item):
         
     Topic = scrapy.Field()
     Date = scrapy.Field()
+    Author = scrapy.Field()
     Title = scrapy.Field()
     Href = scrapy.Field()
-    Author = scrapy.Field()
     Description = scrapy.Field()
     Body = scrapy.Field()
     Comment = scrapy.Field()

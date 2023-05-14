@@ -73,11 +73,11 @@ class CrawlerSpider(Spider):
         topic = response.css('ul.breadcrumb li a::attr(title)').extract_first()
         title = response.css('h1.title-detail::text').extract_first()
         href = response.url
-        author = response.css('p.Normal strong::text').extract_first()
+        author = response.css('p.Normal strong::text').getall()
 
-        if author is None: 
-            author = response.css('p.author_mail strong::text').extract_first()
-        if author is None:
+        if len(author)==0: 
+            author = response.css('p.author_mail strong::text').getall()
+        if len(author)==0:
             author = response.css('div.width-detail-photo p strong::text').getall()
 
         date = response.css('span.date::text').extract_first()
@@ -85,15 +85,18 @@ class CrawlerSpider(Spider):
         body = response.css('p.Normal::text').getall()
         comment = response.css('p.full_content::text').getall()
 
-        if topic is None or topic not in list(TOPICS.values()) or date is None or description is None or body is None:
+        if topic is None or topic not in list(TOPICS.values()):
             pass
         else:
             item = CrawlerItem()
             item['Topic'] = topic
             item['Date'] = date
+            if author:
+                item['Author'] = author[-1]
+            else:
+                item['Author'] = None
             item['Title'] = title
-            item['Href'] = href
-            item['Author'] = ''.join(author)
+            item['Href'] = href          
             item['Description'] =  description
             item['Body'] = ' '.join(body)
             # item['Comment'] = comment
