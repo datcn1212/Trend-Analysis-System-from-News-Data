@@ -39,7 +39,7 @@ class CrawlerPipeline:
         self.file.close()
         # save final dataframe to HDFS
         df = self.spark.createDataFrame(self.lst_data, self.schema)
-        df.write.json(self.hdfs_path)
+        df.write.mode("overwrite").json(self.hdfs_path)
 
         # stop session
         self.spark.stop()
