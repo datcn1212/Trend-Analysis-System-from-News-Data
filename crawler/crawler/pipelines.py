@@ -18,7 +18,7 @@ class CrawlerPipeline:
         self.spark = SparkSession.builder \
                 .appName("Write to HDFS") \
                 .getOrCreate()
-        self.hdfs_path = "hdfs://localhost:9000/user/root/test1.parquet"
+        self.hdfs_path = "hdfs://localhost:9000/datcao/test1.parquet"
         self.lst_data = []
         self.schema = StructType([
                         StructField("Topic", StringType(), nullable=False),
