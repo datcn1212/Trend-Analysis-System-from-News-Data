@@ -39,7 +39,7 @@ class CrawlerPipeline:
         self.file.close()
         # save final dataframe to HDFS
         df = self.spark.createDataFrame(self.lst_data, self.schema)
-        df.write.mode("overwrite").json(self.hdfs_path)
+        # df.write.mode("overwrite").json(self.hdfs_path)
 
         # stop session
         self.spark.stop()
@@ -53,7 +53,6 @@ class CrawlerPipeline:
             # Save to file
             item_line = json.dumps(ItemAdapter(item).asdict(), ensure_ascii=False) 
             self.file.write(item_line+ ",\n")
-
             # Union new item to dataframe
             i = ItemAdapter(item).asdict()
             self.lst_data.append(i)

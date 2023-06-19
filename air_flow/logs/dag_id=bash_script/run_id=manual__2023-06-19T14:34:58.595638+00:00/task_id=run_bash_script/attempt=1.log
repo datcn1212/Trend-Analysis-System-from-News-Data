@@ -1,0 +1,35 @@
+[2023-06-19 14:34:58,909] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: bash_script.run_bash_script manual__2023-06-19T14:34:58.595638+00:00 [queued]>
+[2023-06-19 14:34:58,920] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: bash_script.run_bash_script manual__2023-06-19T14:34:58.595638+00:00 [queued]>
+[2023-06-19 14:34:58,920] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-19 14:34:58,921] {taskinstance.py:1377} INFO - Starting attempt 1 of 1
+[2023-06-19 14:34:58,921] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2023-06-19 14:34:58,934] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): run_bash_script> on 2023-06-19 14:34:58.595638+00:00
+[2023-06-19 14:34:58,940] {standard_task_runner.py:52} INFO - Started process 402 to run task
+[2023-06-19 14:34:58,942] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'bash_script', 'run_bash_script', 'manual__2023-06-19T14:34:58.595638+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/run_crawl.py', '--cfg-path', '/tmp/tmpt9gb2xuw', '--error-file', '/tmp/tmp3nl6rv9n']
+[2023-06-19 14:34:58,942] {standard_task_runner.py:80} INFO - Job 4: Subtask run_bash_script
+[2023-06-19 14:34:58,999] {task_command.py:371} INFO - Running <TaskInstance: bash_script.run_bash_script manual__2023-06-19T14:34:58.595638+00:00 [running]> on host 2ed9c3880c66
+[2023-06-19 14:34:59,064] {taskinstance.py:1591} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=bash_script
+AIRFLOW_CTX_TASK_ID=run_bash_script
+AIRFLOW_CTX_EXECUTION_DATE=2023-06-19T14:34:58.595638+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-06-19T14:34:58.595638+00:00
+[2023-06-19 14:34:59,065] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2023-06-19 14:34:59,065] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'pwd && cd ../crawler && scrapy crawl crawler2']
+[2023-06-19 14:34:59,077] {subprocess.py:85} INFO - Output:
+[2023-06-19 14:34:59,081] {subprocess.py:92} INFO - /tmp/***tmpmv3h67i4
+[2023-06-19 14:34:59,081] {subprocess.py:92} INFO - bash: line 1: cd: ../crawler: No such file or directory
+[2023-06-19 14:34:59,082] {subprocess.py:96} INFO - Command exited with return code 1
+[2023-06-19 14:34:59,096] {taskinstance.py:1909} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-06-19 14:34:59,099] {taskinstance.py:1420} INFO - Marking task as FAILED. dag_id=bash_script, task_id=run_bash_script, execution_date=20230619T143458, start_date=20230619T143458, end_date=20230619T143459
+[2023-06-19 14:34:59,110] {standard_task_runner.py:97} ERROR - Failed to execute job 4 for task run_bash_script (Bash command failed. The command returned a non-zero exit code 1.; 402)
+[2023-06-19 14:34:59,154] {local_task_job.py:156} INFO - Task exited with return code 1
+[2023-06-19 14:34:59,183] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
