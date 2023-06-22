@@ -10,7 +10,7 @@ from sparknlp.annotator import (
 import pyspark.sql.functions as F
 
 
-class ExtractKeyword:
+class ExtractKeywordSparkNLP:
 
     def __init__(self, spark):
 

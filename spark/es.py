@@ -1,5 +1,5 @@
 from elasticsearch import Elasticsearch
-
+from elasticsearch import helpers
 
 class Elastic:
 
@@ -27,13 +27,12 @@ class Elastic:
     def insert_one(self, idx_name, document, id=None):
         i = self.es.index(index=idx_name, id=id, document=document)
         return i['result']
-    def insert_bulk(self, idx_name, document_lst):
-        i = {}
-        return i['result']
-
+    
+    def insert_bulk(self, generator):
+        helpers.bulk(self.es, generator)
+        
     def create_idx_mapping(self, idx_name, mapping):
-        i = self.es.indices.create(index=idx_name, ignore=400, body=mapping)
-        return i['result']
+        self.es.indices.create(index=idx_name, ignore=400, body=mapping)
 
     # def is_exists_idx(self, idx_name):
     #     return self.es.exists(index=idx_name)
