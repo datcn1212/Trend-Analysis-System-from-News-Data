@@ -1,1 +1,4 @@
 scrapy-rotating-proxies
+elasticsearch
+sparknlp
+openai

@@ -1,4 +1,4 @@
-from rake_nltk import Rake
+# from rake_nltk import Rake
 import sparknlp
 import pandas as pd
 from sparknlp.base import DocumentAssembler, Pipeline, LightPipeline
@@ -8,6 +8,7 @@ from sparknlp.annotator import (
     YakeKeywordExtraction
 )
 import pyspark.sql.functions as F
+from pre_processing_text import preprocessing
 
 
 class ExtractKeywordSparkNLP:
@@ -44,9 +45,9 @@ class ExtractKeywordSparkNLP:
 
 
     def pre_processing(self, text):
-        return text
+        return preprocessing(text)
 
-    def extract_kw(self, dict):
+    def extract_kw(self, dict, num_kw):
         text = dict["Title"] + dict["Description"] + dict["Body"]
         text = self.pre_processing(text)
 
@@ -56,7 +57,7 @@ class ExtractKeywordSparkNLP:
                        columns = ['keywords', 'score'])
         keys_df['score'] = keys_df['score'].astype(float)
 
-        top_keywords = keys_df.drop_duplicates(subset='keywords').nlargest(10, 'score')
+        top_keywords = keys_df.drop_duplicates(subset='keywords').nlargest(num_kw, 'score')
 
         top_keywords_list = top_keywords['keywords'].tolist()
 
