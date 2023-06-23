@@ -1,8 +1,14 @@
 from pyvi import ViTokenizer, ViPosTagger, ViUtils
 import re
 
+def get_stopwords_list(stop_file_path):
+    with open(stop_file_path, 'r', encoding="utf-8") as f:
+        stopwords = f.readlines()
+        stop_set = set(m.strip() for m in stopwords)
+        return list(frozenset(stop_set))
+
 def preprocessing(text):
-    # text = re.sub(r'[.,!%?\-={}\(\)]', '', text)
+    # stopwords_lst = get_stopwords_list("vn_stopwords.txt")
     tags = ViPosTagger.postagging(ViTokenizer.tokenize(text))
     token = tags[0]
     tagg = tags[1]
