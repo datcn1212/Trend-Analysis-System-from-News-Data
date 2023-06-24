@@ -2,12 +2,6 @@ from datetime import datetime, timedelta
 from flask import Flask, abort, request
 from flask_cors import CORS
 
-import elasticsearch
-from elasticsearch import helpers, Elasticsearch
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-import numpy as np
-
 from es_service import Elastic
 
 app = Flask(__name__)
@@ -19,25 +13,65 @@ es = Elastic("http://localhost:9202")
 @app.route('/all_keywords', methods=['GET'])
 def get_all_keywords():
     # get all keywords
+    start_time = request.args.get('startTime')
+    end_time = request.args.get('endTime')
+
     idx_name = 'news_data'
-    keywords_list = []
-    res = es.get_all_data(idx_name)
+    keywords_dct = {}
+
+    if start_time or end_time:
+        res = es.get_data_by_time(idx_name, start_time, end_time)
+    else:
+        res = es.get_all_data(idx_name)
+
     for hit in res:
-        if "keyword_lst" in hit["_source"]:
-            keywords_list.extend(hit["_source"]["keyword_lst"])
-    return {'keywords_list': keywords_list}
+        kw = hit["_source"]["keyword_lst"]
+        date = hit["_source"]["formatted_date"]
+        if date not in keywords_dct.keys():
+            keywords_dct[date] = []
+
+        keywords_dct[date].extend(kw)
+
+    return keywords_dct
 
 
-# words_text = " ".join(keywords_list)
+@app.route('/topic_keywords/<topic>', methods=['GET'])
+def get_topic_keywords(topic):
+    start_time = request.args.get('startTime')
+    end_time = request.args.get('endTime')
 
-# wordcloud = WordCloud(width=800, height=400).generate(words_text)
+    idx_name = topic
+    keywords_dct = {}
 
-# plt.figure(figsize=(10, 5))
-# plt.imshow(wordcloud, interpolation='bilinear')
-# plt.axis('off')
-# plt.show()
+    if start_time or end_time:
+        res = es.get_data_by_time(idx_name, start_time, end_time)
+    else:
+        res = es.get_all_data(idx_name)
 
+    for hit in res:
+        kw = hit["_source"]["keyword_lst"]
+        date = hit["_source"]["formatted_date"]
+        if date not in keywords_dct.keys():
+            keywords_dct[date] = []
+
+        keywords_dct[date].extend(kw)
+
+    return keywords_dct
+
+@app.route('/count_topic', methods=['GET'])
+def get_count_keyword():
+    start_time = request.args.get('startTime')
+    end_time = request.args.get('endTime')
+
+    idx_name = 'news_data'
+
+    res = es.count_topic(idx_name, start_time, end_time)
+
+    dict = {}
+    for hit in res:
+        dict[hit['key']] = hit['doc_count']
+
+    return dict
 
 if __name__ == "__main__":
     app.run(debug=True)
-

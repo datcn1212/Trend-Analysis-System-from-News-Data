@@ -15,8 +15,8 @@ class Elastic:
                     "Description": {"type": "text"},
                     "Href": {"type": "text"},
                     "Title": {"type": "text"},
-                    "Topic": {"type": "text"},
-                    "formatted_date": {"type": "text"}
+                    "Topic": {"type": "keyword"},
+                    "formatted_date": {"type": "keyword"}
                 }
             }
         }

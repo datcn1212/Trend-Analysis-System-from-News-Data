@@ -21,14 +21,14 @@ index_name = "news_data"
 es.create_idx_mapping(index_name, es.news_data_mapping)
 
 # extract keywords
-hdfs_path = "hdfs://localhost:9000/newsData/2022/11/7"
+hdfs_path = "hdfs://localhost:9000/newsData/2022/11/5"
 df = spark.read.json(hdfs_path)
 cnt = df.count()
 pandas_df = df.toPandas()
 
 dct_lst = []
 
-for i in range(2):
+for i in range(10):
     tmp = pandas_df.iloc[i].to_dict()
     try:
         keyword_lst = extract_chatgpt.extract_kw(tmp, num_kw=5)
@@ -60,7 +60,7 @@ def generator_dct_topic():
         yield _doc2
 
 # insert to ES
-# res = es.insert_bulk(generator_dct())
+res = es.insert_bulk(generator_dct())
 res = es.insert_bulk(generator_dct_topic())
 
 spark.stop()
