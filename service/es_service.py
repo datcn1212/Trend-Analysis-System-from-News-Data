@@ -30,9 +30,15 @@ class Elastic:
     
     def insert_bulk(self, generator):
         helpers.bulk(self.es, generator)
-        
+
     def create_idx_mapping(self, idx_name, mapping):
         self.es.indices.create(index=idx_name, ignore=400, body=mapping)
 
-    # def is_exists_idx(self, idx_name):
-    #     return self.es.exists(index=idx_name)
+    def get_all_data(self, idx_name):
+        query = {
+            "query": {
+                "match_all": {}
+            }
+        }
+        res = self.es.search(index=idx_name, body=query, size=10000)
+        return res["hits"]["hits"] #list of dict {"_index": , "_source": ,...}

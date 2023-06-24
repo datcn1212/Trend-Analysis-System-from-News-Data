@@ -1,5 +1,6 @@
 import openai
 import time
+import re
 from pre_processing_text import preprocessing
 
 openai.api_key = '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'
@@ -26,8 +27,12 @@ class ExtractKeywordChatGPT:
             model="gpt-3.5-turbo", messages=self.messages
         )
         reply = chat.choices[0].message.content       
-        self.messages.append({"role": "assistant", "content": reply})     
-        reply_lst = reply[:-1].split(",")
+        self.messages.append({"role": "assistant", "content": reply})  
+        
+        # remove '.' from answer if exists and replace '_' by ' '
+        reply = re.sub(r'[.]', '', reply).replace('_', ' ') 
+
+        reply_lst = reply.split(", ")
         time.sleep(5)
         return reply_lst
 
