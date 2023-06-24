@@ -24,25 +24,26 @@ class CrawlerPipeline:
                     ])
 
     def open_spider(self, spider):
-        self.file = open("data1.json", "w", encoding='utf-8')
-        self.file.write('[\n')
+        self.file = open("vnexpress_urls/url.txt", "a", encoding='utf-8')
+        # self.file1 = open("data.json", "w", encoding='utf-8')
 
     def close_spider(self, spider):
-        self.file.write('{}]')
         self.file.close()
+        # self.file1.close()
         self.spark.stop()
 
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
         error_lst = ["", " ", ", ", None]
         if adapter.get("Body") in error_lst:
-            raise DropItem(f"Missing author in {item}")
+            raise DropItem(f"Missing body in {item}")
         else:
-            item_line = json.dumps(ItemAdapter(item).asdict(), ensure_ascii=False) 
-            self.file.write(item_line+ ",\n")
+            # item_line = json.dumps(ItemAdapter(item).asdict(), ensure_ascii=False) 
+            # self.file1.write(item_line+ ",\n")
             
             i = ItemAdapter(item).asdict()
 
+            self.file.write(i['Href']+ "\n")
             date_part = i["Date"].split(", ")[1]
             date = datetime.datetime.strptime(date_part, "%d/%m/%Y")
             year = str(date.year)
@@ -54,5 +55,4 @@ class CrawlerPipeline:
 
             df = self.spark.createDataFrame([i], self.schema)
             df.write.mode("append").json(hdfs_path)
-
             return item

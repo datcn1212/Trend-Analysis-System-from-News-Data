@@ -5,44 +5,16 @@ from crawler.items import CrawlerItem
 import os
 import datetime
 
-# from scrapy_splash import scrapy.Request
-
-BASE_URL = "https://vnexpress.net"
-
-TOPICS =  {
-    "thoi-su": "Thời sự",
-    "the-gioi": "Thế giới",
-    "kinh-doanh": "Kinh doanh",
-    "khoa-hoc": "Khoa học",
-    "giai-tri": "Giải trí",
-    "du-lich": "Du lịch",
-    "giao-duc": "Giáo dục",
-
-}
-
-TOPICS_ID =  {
-    "thoi-su": "1001005",
-    "the-gioi": "1001002",
-    "kinh-doanh": "1003159",
-    "khoa-hoc": "1001009",
-    "giai-tri": "1002691"
-}
-
 class CrawlerSpider(Spider):
     name = "crawler2"
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)   
         self.start_urls = []
-        self.folder_path = "vnexpress"
-
-
-        if not os.path.exists(self.folder_path):
-            os.mkdir(self.folder_path)
-
+        
         dir_path = os.getcwd() + "/urls"
         for filename in os.listdir(dir_path):
-            if filename.endswith(".txt"):  
+            if filename.endswith("test.txt"):  
             # if filename.endswith("test.txt"):
                 file_path = os.path.join(dir_path, filename)
                 with open(file_path, "r") as file:
