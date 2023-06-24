@@ -10,6 +10,8 @@ dict = {
     'Thế giới': 'the_gioi',
     'Thể thao': 'the_thao',
     'Thời sự': 'thoi_su',
+    'Bất động sản': 'bat_dong_san',
+    'Số hóa': 'so-hoa'
 }
 
 dict2 = {
