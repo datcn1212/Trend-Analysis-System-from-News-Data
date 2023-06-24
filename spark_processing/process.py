@@ -6,6 +6,7 @@ from es import Elastic
 from extract_keyword_sparknlp import ExtractKeywordSparkNLP
 from extract_keyword_chatgpt import ExtractKeywordChatGPT
 from mapping_topic import *
+from pre_processing_text import hash_title
 
 # spark = SparkSession.builder.master("local") \
 #                     .appName("Processing data") \
@@ -21,10 +22,10 @@ index_name = "news_data"
 es.create_idx_mapping(index_name, es.news_data_mapping)
 
 # extract keywords
-hdfs_path = "hdfs://localhost:9000/newsData/2023/6/1"
+hdfs_path = "hdfs://localhost:9000/newsData/2023/6/4"
 df = spark.read.json(hdfs_path)
 cnt = df.count()
-print(cnt)
+print('doc_count: ', cnt)
 pandas_df = df.toPandas()
 
 dct_lst = []
@@ -32,7 +33,7 @@ dct_lst = []
 for i in range(cnt):
     tmp = pandas_df.iloc[i].to_dict()
     try:
-        keyword_lst = extract_chatgpt.extract_kw(tmp, num_kw=5)
+        keyword_lst = extract_chatgpt.extract_kw(tmp, num_kw=10)
         tmp['keyword_lst'] = keyword_lst  
         dct_lst.append(tmp) 
     except Exception:
@@ -43,6 +44,7 @@ def generator_dct():
     for i in range(len(dct_lst)):
         _doc = {
             '_index': index_name,
+            '_id': hash_title(dct_lst[i]['Title']),
             '_source': dct_lst[i]
         }
         yield _doc
@@ -52,6 +54,7 @@ def generator_dct_topic():
         dct = dct_lst[i]
         _doc2 = {
             '_index':  topic_vi_to_en(dct['Topic']),
+            '_id': hash_title(dct['Title']),
             '_source': {
                 'Title': dct['Title'],
                 'formatted_date': dct['formatted_date'],
