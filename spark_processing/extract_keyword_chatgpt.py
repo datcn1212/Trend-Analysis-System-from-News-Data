@@ -19,7 +19,7 @@ class ExtractKeywordChatGPT:
         text = dict["Title"] + dict["Description"] + dict["Body"][:200]
         # text = dict["Title"] + dict["Description"] 
         text = self.pre_processing(text)
-        text = f"Trích xuất {num_kw} keywords quan trọng nhất từ đoạn văn sau, chú ý kết quả trả về chỉ bao gồm 5 keywords đó và ngăn cách bởi dấu phẩy: " + text
+        text = f"Trích xuất {num_kw} keywords quan trọng nhất từ đoạn văn sau, chú ý kết quả trả về chỉ bao gồm {num_kw} keywords đó và ngăn cách bởi dấu phẩy: " + text
         self.messages.append(
             {"role": "user", "content": text},
         )
