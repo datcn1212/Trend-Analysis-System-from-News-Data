@@ -10,21 +10,32 @@ import BarChart from "../BarChart";
 import { useState } from "react";
 
 import CountTopicStore from "./countTopicStore";
-import allKeywordsStore from "./allKeywordsStore";
+import AllKeywordsStore from "./allKeywordsStore";
 
 export default function Analytics() {
-  const countTopic = CountTopicStore;
-  let [graph, setGraph] = useState([{ x: 1, y: 1 }]);
 
+  const countTopics = CountTopicStore;
+  let [countTopic, setCountTopic] = useState([{ x: 1, y: 1 }]);
   useEffect(() => {
-    const fetchData = async () => {
-      graph = await countTopic.fetchCountTopic("20230601", "20230602");
-      setGraph(graph);
+    const fetchDataTopic = async () => {
+      countTopic = await countTopics.fetchCountTopic("20230601", "20230602");
+      setCountTopic(countTopic);
     };
-    fetchData();
+    fetchDataTopic();
   }, []);
 
-  console.log(graph);
+
+  const allKeywords = AllKeywordsStore;
+  let [allKeyword, setAllKeywords] = useState([{ x: 1, y: 1 }]);
+  useEffect(() => {
+    const fetchDataKw = async () => {
+      allKeyword = await allKeywords.fetchAllKeywords("20230601", "20230602");
+      setAllKeywords(allKeyword);
+    };
+    fetchDataKw();
+  }, []);
+
+
 
   const graphData = [
     {
@@ -41,7 +52,7 @@ export default function Analytics() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: graph,
+      graph: countTopic,
     },
     {
       title: "Replies per resolution",
@@ -57,7 +68,7 @@ export default function Analytics() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: graph,
+      graph: countTopic,
     },
     {
       title: "Average resolution time",
@@ -73,7 +84,7 @@ export default function Analytics() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: graph,
+      graph: countTopic,
     },
     {
       title: "First contact resolution rate",
@@ -89,7 +100,7 @@ export default function Analytics() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: graph,
+      graph: countTopic,
     },
   ];
 
