@@ -1,5 +1,5 @@
 import React from "react";
-import Efficiency from "../components/Analytics";
+import Analytics from "../components/Analytics";
 import NavBar from "../components/NavBar";
 import Tab from "../components/Tab";
 import TopBar from "../components/TopBar";
@@ -15,7 +15,7 @@ export default function Dashboard() {
           <TopBar />
           <Tab />
         </header> */}
-        <Efficiency />
+        <Analytics />
       </S.Main>
     </S.Container>
   );
@@ -30,7 +30,7 @@ export function Search() {
           <TopBar />
           <Tab />
         </header> */}
-        <Efficiency />
+        <Analytics />
       </S.Main>
     </S.Container>
   );

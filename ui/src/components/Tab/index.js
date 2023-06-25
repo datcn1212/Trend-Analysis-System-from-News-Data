@@ -6,7 +6,9 @@ export default function Tab() {
     <S.Container>
       <S.List>
         <S.ListItem>
-          <S.Item href="#" className="active">Efficiency</S.Item>
+          <S.Item href="#" className="active">
+            Analytics
+          </S.Item>
         </S.ListItem>
         <S.ListItem>
           <S.Item href="#">Volume</S.Item>

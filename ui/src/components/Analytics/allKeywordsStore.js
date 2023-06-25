@@ -1,8 +1,8 @@
 import { action, makeObservable, observable } from "mobx";
 import _ from "lodash";
-import APIS from "../../services/common";
+import APIS from "../../service/common";
 
-class AllKeywordStore {
+class AllKeywordsStore {
     curTrendingSymbols = [];
     symbolChartCellColor = [];
     latestTweets = [];
@@ -14,7 +14,7 @@ class AllKeywordStore {
             symbolChartCellColor: observable,
             latestTweets: observable,
             isLoading: observable,
-            fetchOverviewInfo: action,
+            fetchAllKeywords: action,
         });
     }
 
@@ -37,4 +37,4 @@ class AllKeywordStore {
     }
 }
 
-export default new AnalyticsStore();
+export default new AllKeywordsStore();

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "./styles";
 import Search from "../../assets/icons/search-small.png";
 import Arrow from "../../assets/icons/arrow-down-b.png";
@@ -6,8 +6,26 @@ import Button from "../UI/Button";
 import Graph from "../UI/Graph";
 import Time from "../UI/Time";
 import LineChart from "../LineChart";
+import BarChart from "../BarChart";
+import { useState } from "react";
 
-export default function Efficiency() {
+import CountTopicStore from "./countTopicStore";
+import allKeywordsStore from "./allKeywordsStore";
+
+export default function Analytics() {
+  const countTopic = CountTopicStore;
+  let [graph, setGraph] = useState([{ x: 1, y: 1 }]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      graph = await countTopic.fetchCountTopic("20230601", "20230602");
+      setGraph(graph);
+    };
+    fetchData();
+  }, []);
+
+  console.log(graph);
+
   const graphData = [
     {
       title: "Average response Time",
@@ -23,40 +41,7 @@ export default function Efficiency() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: [
-        {
-          month: "Jan",
-          sales: 12,
-        },
-        {
-          month: "Feb",
-          sales: 20,
-        },
-        {
-          month: "Mar",
-          sales: 30,
-        },
-        {
-          month: "Apr",
-          sales: 50,
-        },
-        {
-          month: "May",
-          sales: 20,
-        },
-        {
-          month: "Jun",
-          sales: 50,
-        },
-        {
-          month: "Jul",
-          sales: 20,
-        },
-        {
-          month: "Aug",
-          sales: 40,
-        },
-      ],
+      graph: graph,
     },
     {
       title: "Replies per resolution",
@@ -72,40 +57,7 @@ export default function Efficiency() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: [
-        {
-          month: "Jan",
-          sales: 12,
-        },
-        {
-          month: "Feb",
-          sales: 20,
-        },
-        {
-          month: "Mar",
-          sales: 30,
-        },
-        {
-          month: "Apr",
-          sales: 50,
-        },
-        {
-          month: "May",
-          sales: 20,
-        },
-        {
-          month: "Jun",
-          sales: 50,
-        },
-        {
-          month: "Jul",
-          sales: 20,
-        },
-        {
-          month: "Aug",
-          sales: 40,
-        },
-      ],
+      graph: graph,
     },
     {
       title: "Average resolution time",
@@ -121,40 +73,7 @@ export default function Efficiency() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: [
-        {
-          month: "Jan",
-          sales: 12,
-        },
-        {
-          month: "Feb",
-          sales: 20,
-        },
-        {
-          month: "Mar",
-          sales: 30,
-        },
-        {
-          month: "Apr",
-          sales: 50,
-        },
-        {
-          month: "May",
-          sales: 20,
-        },
-        {
-          month: "Jun",
-          sales: 50,
-        },
-        {
-          month: "Jul",
-          sales: 20,
-        },
-        {
-          month: "Aug",
-          sales: 40,
-        },
-      ],
+      graph: graph,
     },
     {
       title: "First contact resolution rate",
@@ -170,46 +89,14 @@ export default function Efficiency() {
           time: "1 Hour 30 Mins",
         },
       ],
-      graph: [
-        {
-          month: "Jan",
-          sales: 12,
-        },
-        {
-          month: "Feb",
-          sales: 20,
-        },
-        {
-          month: "Mar",
-          sales: 30,
-        },
-        {
-          month: "Apr",
-          sales: 50,
-        },
-        {
-          month: "May",
-          sales: 20,
-        },
-        {
-          month: "Jun",
-          sales: 50,
-        },
-        {
-          month: "Jul",
-          sales: 20,
-        },
-        {
-          month: "Aug",
-          sales: 40,
-        },
-      ],
+      graph: graph,
     },
   ];
+
   return (
     <S.Container>
       <S.Top>
-        <h2>Efficiency Analytics</h2>
+        <h2>Analytics</h2>
         <S.Right>
           <S.InputField>
             <S.SearchImg src={Search} />
@@ -232,7 +119,7 @@ export default function Efficiency() {
             percentage={data.percentage}
             priority={data.color}
           >
-            <LineChart
+            <BarChart
               defaultColors={[data.color]}
               title={data.title}
               graph={data.graph}

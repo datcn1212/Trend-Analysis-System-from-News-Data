@@ -7,6 +7,7 @@ import User from "../../assets/icons/user.png";
 import Shape from "../../assets/icons/shape.png";
 import Arrow from "../../assets/icons/arrow-right.png";
 import ArrowDown from "../../assets/icons/arrow-down-nav.png";
+import Search from "../../assets/icons/search.png"
 
 export default function NavBar() {
   return (
@@ -29,7 +30,7 @@ export default function NavBar() {
 
           <S.ListItem className="dropdown">
             <S.Item href="##" className="active">
-              <S.ItemIcon src={Message} alt="message" />
+              <S.ItemIcon src={Search} alt="search" />
               Search
             </S.Item>
           </S.ListItem>
