@@ -22,7 +22,7 @@ index_name = "news_data"
 es.create_idx_mapping(index_name, es.news_data_mapping)
 
 # extract keywords
-hdfs_path = "hdfs://localhost:9000/newsData/2023/6/1"
+hdfs_path = "hdfs://localhost:9000/newsData/2023/6/6"
 df = spark.read.json(hdfs_path)
 cnt = df.count()
 print('doc_count: ', cnt)
@@ -30,7 +30,7 @@ pandas_df = df.toPandas()
 
 dct_lst = []
 
-for i in range(cnt):
+for i in range(1):
     tmp = pandas_df.iloc[i].to_dict()
     try:
         keyword_lst = extract_chatgpt.extract_kw(tmp, num_kw=10)

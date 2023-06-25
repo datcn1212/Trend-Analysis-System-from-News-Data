@@ -19,10 +19,7 @@ def get_all_keywords():
     idx_name = 'news_data'
     keywords_dct = {}
 
-    if start_time or end_time:
-        res = es.get_data_by_time(idx_name, start_time, end_time)
-    else:
-        res = es.get_all_data(idx_name)
+    res = es.get_data_by_time(idx_name, start_time, end_time)
 
     for hit in res:
         kw = hit["_source"]["keyword_lst"]
@@ -43,10 +40,7 @@ def get_topic_keywords(topic):
     idx_name = topic
     keywords_dct = {}
 
-    if start_time or end_time:
-        res = es.get_data_by_time(idx_name, start_time, end_time)
-    else:
-        res = es.get_all_data(idx_name)
+    res = es.get_data_by_time(idx_name, start_time, end_time)
 
     for hit in res:
         kw = hit["_source"]["keyword_lst"]
@@ -75,3 +69,14 @@ def get_count_keyword():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
