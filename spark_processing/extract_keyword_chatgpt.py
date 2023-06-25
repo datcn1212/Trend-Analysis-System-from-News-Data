@@ -30,7 +30,8 @@ class ExtractKeywordChatGPT:
         self.messages.append({"role": "assistant", "content": reply})  
         
         # remove '.' from answer if exists and replace '_' by ' '
-        reply = re.sub(r'[.]', '', reply).replace('_', ' ') 
+        # reply = re.sub(r'[.]', '', reply).replace('_', ' ') 
+        reply = re.sub(r'[.]', '', reply)
 
         reply_lst = reply.split(", ")
         time.sleep(5)
