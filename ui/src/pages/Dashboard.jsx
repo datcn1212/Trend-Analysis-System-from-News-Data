@@ -1,5 +1,5 @@
 import React from "react";
-import Efficiency from "../components/Efficiency";
+import Efficiency from "../components/Analytics";
 import NavBar from "../components/NavBar";
 import Tab from "../components/Tab";
 import TopBar from "../components/TopBar";
