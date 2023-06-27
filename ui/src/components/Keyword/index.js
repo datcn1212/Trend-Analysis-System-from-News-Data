@@ -11,7 +11,7 @@ import BarChart2 from "../BarChart2";
 import { useState } from "react";
 
 import CountTopicStore from "./countTopicStore";
-import AllKeywordsStore from "./allKeywordsStore";
+// import AllKeywordsStore from "./allKeywordsStore";
 
 function getSumArticle(countTopic){
   let sum = 0;
@@ -21,29 +21,28 @@ function getSumArticle(countTopic){
   return sum
 }
 
-export default function Analytics() {
+export default function Keyword() {
 
   const countTopics = CountTopicStore;
   let [countTopic, setCountTopic] = useState([{ x: 1, y: 1 }]);
   useEffect(() => {
     const fetchDataTopic = async () => {
-      countTopic = await countTopics.fetchCountTopic("20230601", "20230624");
+      countTopic = await countTopics.fetchCountTopic("20230601", "20230608");
       setCountTopic(countTopic);
     };
     fetchDataTopic();
   }, []);
 
 
-  const allKeywords = AllKeywordsStore;
-  let [allKeyword, setAllKeywords] = useState([{ x: 1, y: 1 }]);
-  useEffect(() => {
-    const fetchDataKw = async () => {
-      allKeyword = await allKeywords.fetchAllKeywords("20230601", "20230624");
-      setAllKeywords(allKeyword);
-    };
-    fetchDataKw();
-  }, []);
-
+  // const allKeywords = AllKeywordsStore;
+  // let [allKeyword, setAllKeywords] = useState([{ x: 1, y: 1 }]);
+  // useEffect(() => {
+  //   const fetchDataKw = async () => {
+  //     allKeyword = await allKeywords.fetchAllKeywords("20230601", "20230624");
+  //     setAllKeywords(allKeyword);
+  //   };
+  //   fetchDataKw();
+  // }, []);
 
 
   const graphData = [
@@ -68,7 +67,7 @@ export default function Analytics() {
   return (
     <S.Container>
       <S.Top>
-        <h2>Overview</h2>
+        <h2>Keyword Analysis</h2>
         <S.Right>
           <S.InputField>
             <S.SearchImg src={Search} />

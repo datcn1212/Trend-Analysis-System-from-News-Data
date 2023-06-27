@@ -12,7 +12,7 @@ export default function LineChart({ defaultColors,title,graph }) {
 
   const primaryAxis = React.useMemo(
     () => ({
-      getValue: (value) => value.month,
+      getValue: (value) => value.x,
     }),
     []
   );
@@ -20,7 +20,7 @@ export default function LineChart({ defaultColors,title,graph }) {
   const secondaryAxes = React.useMemo(
     () => [
       {
-        getValue: (value) => value.sales,
+        getValue: (value) => value.y,
         elementType: "line",
       },
     ],

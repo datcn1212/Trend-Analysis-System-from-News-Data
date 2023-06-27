@@ -27,6 +27,8 @@ export const ProfileImg = styled.div`
 `;
 export const ProfileInfo = styled.div`
   margin-left: 1px;
+  font-size: 18px;
+  font-weight: bold;
 `;
 export const Email = styled.div`
   color: #696d8c;

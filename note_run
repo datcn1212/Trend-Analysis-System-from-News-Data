@@ -1,0 +1,10 @@
+crawler:
+- url: crawl main page, 20 pages next -> use mainly, lap lich bang tham so thoi gian trong code
+
+spark_process:
+- chatgpt process: 171 records (date 23/6/2023 in hdfs) - 7p
+
+service:
+
+
+ui:

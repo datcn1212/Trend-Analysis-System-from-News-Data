@@ -2,6 +2,22 @@ import React from "react";
 import * as S from "./styles";
 import { Chart } from "react-charts";
 
+const labels = [
+  "Đời sống",
+  "Du lịch",
+  "Giải trí",
+  "Giáo dục",
+  "Khoa học",
+  "Kinh doanh",
+  "Pháp luật",
+  "Sức khỏe",
+  "Thế giới",
+  "Thể thao",
+  "Thời sự",
+  "Bất động sản",
+  "Số hóa",
+];
+
 export default function BarChart({ defaultColors,title,graph }) {
   const data = [
     {
@@ -9,14 +25,6 @@ export default function BarChart({ defaultColors,title,graph }) {
       data: graph
     },
   ];
-
-  const axes = React.useMemo(
-    () => [
-      { primary: true, type: 'ordinal', position: 'left' },
-      { position: 'bottom', type: 'linear', stacked: true }
-    ],
-    []
-  );
 
   const primaryAxis = React.useMemo(
     () => ({
@@ -29,6 +37,7 @@ export default function BarChart({ defaultColors,title,graph }) {
     () => [
       {
         getValue: (value) => value.y,
+        suggestedMin: 0,
         elementType: "bar"
       },
     ],
@@ -38,7 +47,8 @@ export default function BarChart({ defaultColors,title,graph }) {
   const options = {
     scales: {
       y: {
-        type: "linear", // Specify the scale type as "linear"
+        type: "band", // Specify the scale type as "linear"
+        suggestedMin: 0, // Dynamically calculate the suggestedMin
       },
     },
   };
@@ -47,6 +57,7 @@ export default function BarChart({ defaultColors,title,graph }) {
     <S.Container>
       <Chart
         options={{
+          options,
           data,
           primaryAxis,
           secondaryAxes,

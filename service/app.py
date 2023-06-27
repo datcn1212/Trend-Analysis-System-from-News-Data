@@ -8,7 +8,21 @@ app = Flask(__name__)
 CORS(app)
 
 es = Elastic("http://localhost:9202")
-
+topics = [
+  "Đời sống",
+  "Du lịch",
+  "Giải trí",
+  "Giáo dục",
+  "Khoa học",
+  "Kinh doanh",
+  "Pháp luật",
+  "Sức khỏe",
+  "Thế giới",
+  "Thể thao",
+  "Thời sự",
+  "Bất động sản",
+  "Số hóa"
+]
 
 @app.route('/all_keywords', methods=['GET'])
 def get_all_keywords():
@@ -65,6 +79,10 @@ def get_count_keyword():
     for hit in res:
         dict[hit['key']] = hit['doc_count']
 
+    for x in topics:
+        if x not in dict.keys():
+            dict[x] = 0
+            
     return dict
 
 if __name__ == "__main__":
