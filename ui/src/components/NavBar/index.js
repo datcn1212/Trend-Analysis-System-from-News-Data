@@ -23,7 +23,7 @@ export default function NavBar() {
         </S.Profile>
         <S.List>
           <S.ListItem className="dropdown">
-            <S.Item href="overview" className="active">
+            <S.Item href="/" className="active">
               <S.ItemIcon src={Shape} alt="user" />
               Overview
             </S.Item>

@@ -47,7 +47,7 @@ export default function Dashboard() {
   return (
     <BrowserRouter>
     <Routes>
-      <Route exact path={routingPaths.overview} element = {<Analytic/>}/>
+      <Route exact path={"/"} element = {<Analytic/>}/>
       <Route path={routingPaths.keyword} element = {<KeyworD/>}/>
       <Route path={routingPaths.search} element = {<SSearch/>}/>
     </Routes>
