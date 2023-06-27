@@ -10,7 +10,7 @@ import BarChart from "../BarChart";
 import BarChart2 from "../BarChart2";
 import { useState } from "react";
 
-import CountTopicStore from "./countTopicStore";
+import CountTopicStore from "./kwStore";
 // import AllKeywordsStore from "./allKeywordsStore";
 
 function getSumArticle(countTopic){

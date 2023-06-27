@@ -44,27 +44,40 @@ class Elastic:
         }
         res = self.es.search(index=idx_name, body=query, size=10000)
         return res["hits"]["hits"]
-    
+
     def count_topic(self, idx_name, start_time, end_time):
         query = {
             "size": 0,
             "query": {
                 "range": {
-                "formatted_date": {
-                    "gte": start_time,
-                    "lte": end_time
-                }
+                    "formatted_date": {
+                        "gte": start_time,
+                        "lte": end_time
+                    }
                 }
             },
             "aggs": {
                 "topics": {
-                "terms": {
-                    "field": "Topic",
-                    "size": 10
-                }
+                    "terms": {
+                        "field": "Topic",
+                        "size": 10
+                    }
                 }
             }
         }
         res = self.es.search(index=idx_name, body=query)
-        return res["aggregations"]["topics"]["buckets"] #list of {'key': , 'doc_count': ,...}
+        # list of {'key': , 'doc_count': ,...}
+        return res["aggregations"]["topics"]["buckets"]
 
+    def full_text_search(self, word, idx_name='news_data'):
+        query = {
+            "query": {
+                "match": {
+                    "Body": {
+                        "query": word
+                    }
+                }
+            }
+        }
+        res = self.es.search(index=idx_name, body=query)
+        return res['hits']['hits']

@@ -9,20 +9,21 @@ CORS(app)
 
 es = Elastic("http://localhost:9202")
 topics = [
-  "Đời sống",
-  "Du lịch",
-  "Giải trí",
-  "Giáo dục",
-  "Khoa học",
-  "Kinh doanh",
-  "Pháp luật",
-  "Sức khỏe",
-  "Thế giới",
-  "Thể thao",
-  "Thời sự",
-  "Bất động sản",
-  "Số hóa"
+    "Đời sống",
+    "Du lịch",
+    "Giải trí",
+    "Giáo dục",
+    "Khoa học",
+    "Kinh doanh",
+    "Pháp luật",
+    "Sức khỏe",
+    "Thế giới",
+    "Thể thao",
+    "Thời sự",
+    "Bất động sản",
+    "Số hóa"
 ]
+
 
 @app.route('/all_keywords', methods=['GET'])
 def get_all_keywords():
@@ -66,6 +67,7 @@ def get_topic_keywords(topic):
 
     return keywords_dct
 
+
 @app.route('/count_topic', methods=['GET'])
 def get_count_keyword():
     start_time = request.args.get('startTime')
@@ -82,19 +84,16 @@ def get_count_keyword():
     for x in topics:
         if x not in dict.keys():
             dict[x] = 0
-            
+
     return dict
+
+
+@app.route('/search', methods=['GET'])
+def search():
+    word = request.args.get('word')
+    res = es.full_text_search(word)
+    return {'data': [re['_source'] for re in res]}
+
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
