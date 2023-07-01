@@ -44,7 +44,7 @@ export default function Analytics() {
     fetchDataKw();
   }, []);
 
-
+  console.log(countTopic)
 
   const graphData = [
     {

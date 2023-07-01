@@ -15,17 +15,8 @@ class CountTopicStore {
   // }
 
   async fetchCountTopic(startTime, endTime) {
-
-    // this.isLoading = true;
-    
     const res = await APIS.getCountTopic(startTime, endTime)
-
-    // this.graph = Object.entries(res.data).map(([x, y]) => ({ x, y }));
-
-    // this.isLoading = false;
-
     return Object.entries(res.data).map(([x, y]) => ({ x, y }));
-
   }
 }
 

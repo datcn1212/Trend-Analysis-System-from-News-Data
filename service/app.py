@@ -5,7 +5,8 @@ from flask_cors import CORS
 from es_service import Elastic
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins='http://localhost:3000', methods=['GET', 'POST'])
+
 
 es = Elastic("http://localhost:9202")
 topics = [

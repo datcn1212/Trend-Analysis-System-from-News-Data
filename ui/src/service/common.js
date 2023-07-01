@@ -13,8 +13,13 @@ const APIS = {
       },
     }),
 
-  getTopicKeywords: (topic, args) =>
-    axios.get(`${API_ROOT}/topic_keywords/${topic}`, { params: args }),
+  getTopicKeywords: (topic, startTime, endTime) =>
+    axios.get(`${API_ROOT}/topic_keywords/${topic}`, {
+      params: {
+        startTime: startTime,
+        endTime: endTime,
+      },
+    }),
 
   getCountTopic: (startTime, endTime) =>
     axios.get(`${API_ROOT}/count_topic`, {

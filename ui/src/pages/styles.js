@@ -7,5 +7,5 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   width: calc(100% - 262px);
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 `;
