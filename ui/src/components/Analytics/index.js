@@ -12,39 +12,68 @@ import { useState } from "react";
 
 import CountTopicStore from "./countTopicStore";
 import AllKeywordsStore from "./allKeywordsStore";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-function getSumArticle(countTopic){
+function getSumArticle(countTopic) {
   let sum = 0;
-  for(let i=0; i<countTopic.length; i++){
+  for (let i = 0; i < countTopic.length; i++) {
     sum += countTopic[i].y;
   }
-  return sum
+  return sum;
+}
+function convertDateToString(date) {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+
+  const formattedDate = `${year}${month}${day}`;
+
+  return formattedDate;
 }
 
 export default function Analytics() {
+  const [startDate, setStartDate] = useState(new Date(2023, 5, 24));
+  const [endDate, setEndDate] = useState(new Date(2023, 5, 24));
+
+  const handleStartDateChange = (date) => {
+    setStartDate(date);
+  };
+  const handleEndDateChange = (date) => {
+    setEndDate(date);
+  };
+  const handleApplyChanges = () => {
+    fetchData();
+    console.log("Start Date:", startDate);
+    console.log("End Date:", endDate);
+  };
+  const fetchData = async () => {
+    const countTopics = CountTopicStore;
+    const countTopic = await countTopics.fetchCountTopic(
+      convertDateToString(startDate),
+      convertDateToString(endDate)
+    );
+    setCountTopic(countTopic);
+
+    const allKeywords = AllKeywordsStore;
+    const allKeyword = await allKeywords.fetchAllKeywords(
+      convertDateToString(startDate),
+      convertDateToString(endDate)
+    );
+    setAllKeywords(allKeyword);
+  };
 
   const countTopics = CountTopicStore;
   let [countTopic, setCountTopic] = useState([{ x: 1, y: 1 }]);
   useEffect(() => {
-    const fetchDataTopic = async () => {
-      countTopic = await countTopics.fetchCountTopic("20230601", "20230624");
-      setCountTopic(countTopic);
-    };
-    fetchDataTopic();
+    fetchData();
   }, []);
-
 
   const allKeywords = AllKeywordsStore;
   let [allKeyword, setAllKeywords] = useState([{ x: 1, y: 1 }]);
   useEffect(() => {
-    const fetchDataKw = async () => {
-      allKeyword = await allKeywords.fetchAllKeywords("20230601", "20230624");
-      setAllKeywords(allKeyword);
-    };
-    fetchDataKw();
+    fetchData();
   }, []);
-
-  console.log(countTopic)
 
   const graphData = [
     {
@@ -54,15 +83,15 @@ export default function Analytics() {
       others: [
         {
           title: "Total number",
-          time: getSumArticle(countTopic) + ' articles',
+          time: getSumArticle(countTopic) + " articles",
         },
         {
           title: "Average number per Topic",
-          time: (getSumArticle(countTopic)/13).toFixed(1) + ' articles',
+          time: (getSumArticle(countTopic) / 13).toFixed(1) + " articles",
         },
       ],
       graph: countTopic,
-    }
+    },
   ];
 
   return (
@@ -86,17 +115,45 @@ export default function Analytics() {
       </S.Top>
       {graphData.map((data, i) => (
         <S.Analytics key={i}>
-          <Graph
-            graphHeader={data.title}
-            percentage={data.percentage}
-            priority={data.color}
-          >
+          <S.Container1>
+            <S.Top1>
+              <S.Wrap>
+                <h6>{data.title}</h6>
+                {/* <S.Percentage className="text-sm">{data.percentage}</S.Percentage> */}
+              </S.Wrap>
+              <S.Wrap>
+                <S.Calender>
+                  {/* <span className="text-sm">This Month</span>
+                  <img src={Calendar} alt="calender"/> */}
+                  {/* <div> */}
+                  <div>
+                    <label>Start Date:</label>
+                    <DatePicker
+                      selected={startDate}
+                      onChange={handleStartDateChange}
+                    />
+                  </div>
+                  <div>
+                    <label>End Date:</label>
+                    <DatePicker
+                      selected={endDate}
+                      onChange={handleEndDateChange}
+                    />
+                  </div>
+                  <S.ApplyButton onClick={handleApplyChanges}>
+                    Submit
+                  </S.ApplyButton>
+                  {/* </div> */}
+                </S.Calender>
+              </S.Wrap>
+            </S.Top1>
             <BarChart
               defaultColors={[data.color]}
               title={data.title}
               graph={data.graph}
             />
-          </Graph>
+          </S.Container1>
+
           <S.TimeWrap>
             {data.others.map((item, index) => (
               <Time title={item.title} time={item.time} key={`time ${index}`} />

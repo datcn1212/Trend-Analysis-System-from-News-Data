@@ -58,7 +58,7 @@ export default function Keyword() {
     },
   ];
    
-  const result = countTopic[0].reduce((acc, currentValue) => {
+  const result = countTopic.reduce((acc, currentValue) => {
     const existingItem = acc.find(item => item.text === currentValue);
     if (existingItem) {
       existingItem.value++;

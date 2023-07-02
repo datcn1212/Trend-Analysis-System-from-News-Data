@@ -43,7 +43,7 @@ export const Calender = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 8px 16px;
-  width: 148px;
+  width: 400px;
   border: 1px solid #e1e1eb;
   border-radius: 8px;
   margin-left: 16px;

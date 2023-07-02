@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
-import Calendar from "../../../assets/icons/calendar.png";
+// import Calendar from "../../../assets/icons/calendar.png";
+
 
 export default function Graph({
   children,
@@ -14,7 +15,7 @@ export default function Graph({
       <S.Top>
         <S.Wrap>
           <h6>{graphHeader}</h6>
-          <S.Percentage className="text-sm">{percentage}</S.Percentage>
+          {/* <S.Percentage className="text-sm">{percentage}</S.Percentage> */}
         </S.Wrap>
         <S.Wrap>
           <S.PriorityWrap>
@@ -22,8 +23,9 @@ export default function Graph({
             <span className="text-sm">High priority</span>
           </S.PriorityWrap>
           <S.Calender>
-            <span className="text-sm">This Month</span>
-            <img src={Calendar} alt="calender"/>
+            {/* <span className="text-sm">This Month</span>
+            <img src={Calendar} alt="calender"/> */}
+            
           </S.Calender>
         </S.Wrap>
       </S.Top>
