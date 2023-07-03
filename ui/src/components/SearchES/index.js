@@ -9,102 +9,84 @@ import LineChart from "../LineChart";
 import BarChart from "../BarChart";
 import BarChart2 from "../BarChart2";
 import { useState } from "react";
-
+import ReactWordcloud from "react-wordcloud";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 import CountTopicStore from "./searchStore";
 // import AllKeywordsStore from "./allKeywordsStore";
 
-function getSumArticle(countTopic){
-  let sum = 0;
-  for(let i=0; i<countTopic.length; i++){
-    sum += countTopic[i].y;
-  }
-  return sum
-}
-
 export default function SearchES() {
-
-  const countTopics = CountTopicStore;
-  let [countTopic, setCountTopic] = useState([{ x: 1, y: 1 }]);
-  useEffect(() => {
-    const fetchDataTopic = async () => {
-      countTopic = await countTopics.fetchCountTopic("20230601", "20230602");
-      setCountTopic(countTopic);
-    };
-    fetchDataTopic();
-  }, []);
-
-
-  // const allKeywords = AllKeywordsStore;
-  // let [allKeyword, setAllKeywords] = useState([{ x: 1, y: 1 }]);
-  // useEffect(() => {
-  //   const fetchDataKw = async () => {
-  //     allKeyword = await allKeywords.fetchAllKeywords("20230601", "20230624");
-  //     setAllKeywords(allKeyword);
-  //   };
-  //   fetchDataKw();
-  // }, []);
-
-
-  const graphData = [
+  let [word, setWord] = useState("Việt Nam");
+  let [searchData, setSearchData] = useState([
     {
-      title: "Number of articles per Topic",
-      percentage: "+4.14%",
-      color: "#F05D23",
-      others: [
-        {
-          title: "Total number",
-          time: getSumArticle(countTopic) + ' articles',
-        },
-        {
-          title: "Average number per Topic",
-          time: (getSumArticle(countTopic)/13).toFixed(1) + ' articles',
-        },
-      ],
-      graph: countTopic,
-    }
-  ];
+      Href: "",
+      Title: "<Choose one of above words>",
+    },
+  ]);
+  const handleWord = (string) => {
+    setWord(string.target.value);
+  };
+  const handleSearch = () => {
+    fetchSearchData();
+  };
+  const fetchSearchData = async () => {
+    const countTopics = CountTopicStore;
+    const searchData = await countTopics.fetchSearchData(word);
+    setSearchData(searchData);
+  };
+
+  useEffect(() => {
+    fetchSearchData();
+  }, []);
 
   return (
     <S.Container>
       <S.Top>
         <h2>Articles Search</h2>
         <S.Right>
-          <S.InputField>
-            <S.SearchImg src={Search} />
-            <S.Input type="text" placeholder="Search" />
-          </S.InputField>
-          <S.Filter>
-            <span>Filter Options</span>
-            <S.FilterImg src={Arrow} />
-          </S.Filter>
           <S.Line />
           <Button background="#25BB87" width="105px">
             Export
           </Button>
         </S.Right>
       </S.Top>
-      {graphData.map((data, i) => (
-        <S.Analytics key={i}>
-          <Graph
-            graphHeader={data.title}
-            percentage={data.percentage}
-            priority={data.color}
-          >
-            <BarChart
-              defaultColors={[data.color]}
-              title={data.title}
-              graph={data.graph}
-            />
-          </Graph>
-          <S.TimeWrap>
-            {data.others.map((item, index) => (
-              <Time title={item.title} time={item.time} key={`time ${index}`} />
-            ))}
-
-            {/* <Time title="Response Time" time="1 Hour 30 Mins" /> */}
-          </S.TimeWrap>
-        </S.Analytics>
-      ))}
+      <br></br>
+      <S.Wrap>
+        <div>
+          <h3>Input :</h3>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <S.InputField>
+          <S.SearchImg src={Search} />
+          <S.Input
+            type="text"
+            placeholder="Search"
+            value={word}
+            onChange={handleWord}
+          />
+        </S.InputField>
+        <S.button onClick={handleSearch}>Search</S.button>
+      </S.Wrap>
+      <br></br>
+      <br></br>
+      <h3>Suggested Articles:</h3>
+      <br></br>
+      <div>
+        <p>
+          {searchData.map((item, index) => {
+            return (
+              <div>
+                <p>
+                  {index + 1}. {item["Title"]}
+                </p>
+                <a href={item["Href"]} target="_blank">
+                  {item["Href"]}
+                </a>
+              </div>
+            );
+          })}
+        </p>
+      </div>
     </S.Container>
   );
 }

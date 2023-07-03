@@ -3,29 +3,24 @@ import _ from "lodash";
 import APIS from "../../service/common";
 
 class CountTopicStore {
-  isLoading = false;
-  graph = [];
+  async fetchCountTopic(topic, startTime, endTime) {
+    const res = await APIS.getTopicKeywords(topic, startTime, endTime);
+    return res.data.data;
+  }
 
-  // constructor() {
-  //   makeObservable(this, {
-  //     isLoading: observable,
-  //     graph: observable,
-  //     fetchCountTopic: action,
-  //   });
-  // }
-
-  async fetchCountTopic(startTime, endTime) {
-
-    // this.isLoading = true;
-    
-    const res = await APIS.getCountTopic(startTime, endTime)
-
-    // this.graph = Object.entries(res.data).map(([x, y]) => ({ x, y }));
-
-    // this.isLoading = false;
-
-    return Object.entries(res.data).map(([x, y]) => ({ x, y }));
-
+  async fetchSearchData(word) {
+    const res = await APIS.getSearchData(word);
+    console.log(res.data.data);
+    if (res.data.data[0] == null) {
+      return [
+        {
+          Author: 0,
+          Href: 0,
+          Title: 0,
+        },
+      ];
+    }
+    return res.data.data;
   }
 }
 
