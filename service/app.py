@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from flask import Flask, abort, request
 from flask_cors import CORS
-
+import urllib.parse
 from es_service import Elastic
 
 app = Flask(__name__)
@@ -34,7 +34,7 @@ def get_all_keywords():
 
     idx_name = 'news_data'
     keywords_dct = {}
-
+    
     res = es.get_data_by_time(idx_name, start_time, end_time)
 
     for hit in res:
@@ -44,9 +44,9 @@ def get_all_keywords():
             keywords_dct[date] = []
 
         keywords_dct[date].extend(kw)
-
+        
     return keywords_dct
-
+    
 
 @app.route('/topic_keywords/<topic>', methods=['GET'])
 def get_topic_keywords(topic):
@@ -54,19 +54,25 @@ def get_topic_keywords(topic):
     end_time = request.args.get('endTime')
 
     idx_name = topic
-    keywords_dct = {}
+    # keywords_dct = {}
 
+    kw_lst = []
+    kw_lst_2 = []
     res = es.get_data_by_time(idx_name, start_time, end_time)
 
     for hit in res:
         kw = hit["_source"]["keyword_lst"]
-        date = hit["_source"]["formatted_date"]
-        if date not in keywords_dct.keys():
-            keywords_dct[date] = []
+        # date = hit["_source"]["formatted_date"]
+        # if date not in keywords_dct.keys():
+        #     keywords_dct[date] = []
 
-        keywords_dct[date].extend(kw)
+        # keywords_dct[date].extend(kw)
+        kw_lst.extend(kw)
 
-    return keywords_dct
+    for i in kw_lst:
+        kw_lst_2.append(i.replace('_', ' '))
+    # return keywords_dct
+    return {"data": kw_lst_2}
 
 
 @app.route('/count_topic', methods=['GET'])
@@ -92,8 +98,8 @@ def get_count_keyword():
 @app.route('/search', methods=['GET'])
 def search():
     word = request.args.get('word')
-    res = es.full_text_search(word)
-    return {'data': [re['_source'] for re in res]}
+    res = es.full_text_search(urllib.parse.unquote(word))
+    return {'data': [re['_source'] for re in res[:5]]}
 
 
 if __name__ == "__main__":

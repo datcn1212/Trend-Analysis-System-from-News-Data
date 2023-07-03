@@ -85,10 +85,10 @@ export const Profile = styled.span`
 `;
 export const Analytics = styled.div`
   display: flex;
-  border: 1px solid #ecebf5;
+  border: 0px solid #ecebf5;
   border-radius: 10px;
-  height: 600px;
-  margin-bottom: 24px;
+  height: 150px;
+  margin-bottom: 10px;
   :last-child {
     margin-bottom: 0;
   }
@@ -99,4 +99,70 @@ export const TimeWrap = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 100%;
+`;
+
+export const Container1 = styled.div`
+  width: 100%;
+  border-right: 1px solid #ecebf5;
+  padding: 26px 24px;
+  font-weight: 500;
+`;
+export const Top1 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const Wrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const Percentage = styled.span`
+  padding: 4px 12px;
+  color: #25bb87;
+  background: rgba(37, 187, 135, 0.1);
+  margin-left: 16px;
+  border-radius: 4px;
+`;
+export const PriorityWrap = styled.div`
+  border-right: 1px solid #e1e1eb;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+`;
+export const Priority = styled.span`
+  width: 10px;
+  height: 10px;
+
+  border-radius: 2px;
+  display: block;
+  margin-right: 8px;
+  background: ${(props) => (props.priority ? props.priority : "#f05d23")};
+`;
+export const Calender = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  width: 560px;
+  border: 1px solid #e1e1eb;
+  border-radius: 8px;
+  margin-left: 16px;
+`;
+export const ApplyButton = styled.button`
+  background-color: #25bb87;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
+export const button = styled.button`
+  background-color: #e0eef9;
+  color: black;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
 `;

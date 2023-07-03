@@ -9,76 +9,177 @@ import LineChart from "../LineChart";
 import BarChart from "../BarChart";
 import BarChart2 from "../BarChart2";
 import { useState } from "react";
-import ReactWordcloud from 'react-wordcloud';
-
+import ReactWordcloud from "react-wordcloud";
+import Dropdown from "react-dropdown";
+import "react-dropdown/style.css";
 import CountTopicStore from "./kwStore";
-// import AllKeywordsStore from "./allKeywordsStore";
 
+const dict = {
+  "Đời sống": "doi_song",
+  "Du lịch": "du_lich",
+  "Giải trí": "giai_tri",
+  "Giáo dục": "giao_duc",
+  "Khoa học": "khoa_hoc",
+  "Kinh doanh": "kinh_doanh",
+  "Pháp luật": "phap_luat",
+  "Sức khỏe": "suc_khoe",
+  "Thế giới": "the_gioi",
+  "Thể thao": "the_thao",
+  "Thời sự": "thoi_su",
+  "Bất động sản": "bat_dong_san",
+  "Số hóa": "so-hoa",
+};
+
+function convertDateToString(date) {
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+
+  const formattedDate = `${year}${month}${day}`;
+
+  return formattedDate;
+}
 
 export default function Keyword() {
-  const countTopics = CountTopicStore;
-  let [countTopic, setCountTopic] = useState([{"a": 1}]);
+  let [countTopic, setCountTopic] = useState(["dat"]);
+  let [Topic, setTopic] = useState("thoi_su");
+  let [startDate, setStartDate] = useState("20230624");
+  let [word, setWord] = useState("Việt Nam");
+  let [searchData, setSearchData] = useState([
+    {
+      Href: '',
+      Title: '<Choose one of above words>',
+    },
+  ]);
+
+  const handleWord = (string) => {
+    setWord(string);
+    fetSearchData();
+  };
+
+  const handleTopic = (string1) => {
+    const string = string1.value;
+    setTopic(dict[string]);
+  };
+
+  const submit = () => {
+    fetchDataTopic();
+  };
+
+  const handleStartDateChange = (string1) => {
+    const string = string1.value;
+    const currentDate = new Date();
+    if (string == "1 day ago") {
+      const _1DaysAgo = new Date(currentDate);
+      _1DaysAgo.setDate(currentDate.getDate() - 1);
+      setStartDate(convertDateToString(_1DaysAgo));
+    } else if (string == "3 days ago") {
+      const _3DaysAgo = new Date(currentDate);
+      _3DaysAgo.setDate(currentDate.getDate() - 3);
+      setStartDate(convertDateToString(_3DaysAgo));
+    } else if (string == "1 week ago") {
+      const _7DaysAgo = new Date(currentDate);
+      _7DaysAgo.setDate(currentDate.getDate() - 7);
+      setStartDate(convertDateToString(_7DaysAgo));
+    } else {
+      const _30DaysAgo = new Date(currentDate);
+      _30DaysAgo.setDate(currentDate.getDate() - 30);
+      setStartDate(convertDateToString(_30DaysAgo));
+    }
+  };
+
+  const fetchDataTopic = async () => {
+    const countTopics = CountTopicStore;
+    const countTopic = await countTopics.fetchCountTopic(
+      Topic,
+      startDate,
+      convertDateToString(new Date())
+    );
+    setCountTopic(countTopic);
+  };
+
+  const fetSearchData = async () => {
+    const countTopics = CountTopicStore;
+    const searchData = await countTopics.fetchSearchData(word);
+    setSearchData(searchData);
+  };
 
   useEffect(() => {
-    const fetchDataTopic = async () => {
-      countTopic = await countTopics.fetchCountTopic('thoi_su','20230624','20230624');
-      console.log(countTopic);
-      setCountTopic(countTopic);
-    };
     fetchDataTopic();
   }, []);
 
-  const callbacks = {
-    getWordColor: word => word.value > 50 ? "blue" : "red",
-    onWordClick: console.log,
-    onWordMouseOver: console.log,
-    getWordTooltip: word => `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`,
-  }
-  const options = {
-    rotations: 3,
-    rotationAngles: [0, 0],
-  };
-  const size = [600, 400];
-  const words = [
-    {
-      text: 'told',
-      value: 64,
-    },
-    {
-      text: 'mistake',
-      value: 11,
-    },
-    {
-      text: 'thought',
-      value: 16,
-    },
-    {
-      text: 'bad',
-      value: 17,
-    },
+  // const callbacks = {
+  //   getWordColor: word => word.value > 50 ? "blue" : "red",
+  //   onWordClick: console.log,
+  //   onWordMouseOver: console.log,
+  //   getWordTooltip: word => `${word.text} (${word.value}) [${word.value > 50 ? "good" : "bad"}]`,
+  // }
+  // const options = {
+  //   rotations: 3,
+  //   rotationAngles: [0, 0],
+  // };
+  // const size = [600, 400];
+  // const words = [
+  //   {
+  //     text: 'told',
+  //     value: 64,
+  //   },
+  //   {
+  //     text: 'mistake',
+  //     value: 11,
+  //   },
+  //   {
+  //     text: 'thought',
+  //     value: 16,
+  //   },
+  //   {
+  //     text: 'bad',
+  //     value: 17,
+  //   },
+  // ];
+
+  // const result = countTopic.reduce((acc, currentValue) => {
+  //   const existingItem = acc.find(item => item.text === currentValue);
+  //   if (existingItem) {
+  //     existingItem.value++;
+  //   } else {
+  //     acc.push({ text: currentValue, value: 1 });
+  //   }
+  //   return acc;
+  // }, []);
+
+  // function MyWordcloud() {
+  //   return (
+  //     <ReactWordcloud
+  //       callbacks={callbacks}
+  //       options={options}
+  //       size={size}
+  //       words={result}
+  //     />
+  //   );
+  // }
+  const options = [
+    "Thời sự",
+    "Đời sống",
+    "Du lịch",
+    "Giải trí",
+    "Giáo dục",
+    "Khoa học",
+    "Kinh doanh",
+    "Pháp luật",
+    "Sức khỏe",
+    "Thế giới",
+    "Thể thao",
+    "Bất động sản",
+    "Số hóa",
   ];
-   
-  const result = countTopic.reduce((acc, currentValue) => {
-    const existingItem = acc.find(item => item.text === currentValue);
-    if (existingItem) {
-      existingItem.value++;
-    } else {
-      acc.push({ text: currentValue, value: 1 });
-    }
-    return acc;
-  }, []);
 
-  function MyWordcloud() {
-    return (
-      <ReactWordcloud
-        callbacks={callbacks}
-        options={options}
-        size={size}
-        words={result}
-      />
-    );
-  }
+  const options2 = ["1 day ago", "3 days ago", "1 week ago", "1 month ago"];
 
+  const defaultOption = options[0];
+  const defaultOption2 = options2[0];
+
+  console.log(searchData);
   return (
     <S.Container>
       <S.Top>
@@ -98,13 +199,77 @@ export default function Keyword() {
           </Button>
         </S.Right>
       </S.Top>
-      
-        <S.Analytics>
-          
-          <MyWordcloud/>
+      <br></br>
+      <S.Wrap>
+        <div>
+          <h3>Topic :</h3>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div>
+          <Dropdown
+            options={options}
+            onChange={handleTopic}
+            value={defaultOption}
+            placeholder="Select an option"
+          />
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+          <Dropdown
+            options={options2}
+            onChange={handleStartDateChange}
+            value={defaultOption2}
+            placeholder="Select an option"
+          />
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+          <S.ApplyButton onClick={submit}>Submit</S.ApplyButton>
+        </div>
+      </S.Wrap>
+      <br></br>
+      <S.Analytics>
+        {/* <MyWordcloud/> */}
 
-        </S.Analytics>
-     
+        <div>
+          {countTopic.map((item, index) => {
+            if (index < 27) {
+              if (index % 9 == 0 && index != 0) {
+                return (
+                  <span>
+                    <br></br>
+                    <br></br>
+                    <S.button key={index} onClick={() => handleWord(item)}>
+                      {item}
+                    </S.button>
+                    &nbsp;&nbsp;&nbsp;
+                  </span>
+                );
+              }
+              return (
+                <span>
+                  <S.button key={index} onClick={() => handleWord(item)}>
+                    {item}
+                  </S.button>
+                  &nbsp;&nbsp;&nbsp;
+                </span>
+              );
+            }
+          })}
+          &nbsp;&nbsp;&nbsp;
+        </div>
+        
+      </S.Analytics>
+      <br></br>
+      <h3>Suggested Articles:</h3>
+      <div>
+      <p>{searchData.map((item, index) => {
+        return(
+        <div>
+        <p>{index+1}. {item['Title']}</p>
+        <a href={item['Href']} target="_blank">{item['Href']}</a>
+        </div>)
+      })}</p></div>
     </S.Container>
   );
 }

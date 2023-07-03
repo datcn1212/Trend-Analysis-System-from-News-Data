@@ -28,6 +28,13 @@ const APIS = {
         endTime: endTime,
       },
     }),
+
+  getSearchData: (word) =>
+    axios.get(`${API_ROOT}/search`, {
+      params: {
+        word: encodeURIComponent(word)
+      },
+    }),
 };
 
 export default APIS;

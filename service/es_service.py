@@ -70,12 +70,12 @@ class Elastic:
         return res["aggregations"]["topics"]["buckets"]
 
     def full_text_search(self, word, idx_name='news_data'):
+        word = word.replace("_", " ")
         query = {
             "query": {
-                "match": {
-                    "Body": {
-                        "query": word
-                    }
+                "multi_match": {
+                    "query": word,
+                    "fields": ["Title", "Description", "Body"]
                 }
             }
         }
