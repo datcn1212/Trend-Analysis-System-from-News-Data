@@ -26,7 +26,7 @@ TOPICS_ID = {
 
 
 class CrawlerSpider(Spider):
-    name = "url"
+    name = "vnexpress_main"
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
