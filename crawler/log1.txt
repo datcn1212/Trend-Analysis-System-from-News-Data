@@ -1,0 +1,1908 @@
+2023-07-06 23:46:31 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:46:31 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:46:31 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:46:31 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:46:31 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:46:31 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:46:31 [scrapy.extensions.telnet] INFO: Telnet Password: c94a3c6c73b628b8
+2023-07-06 23:46:31 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:46:31 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:46:31 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:46:31 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:46:31 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:46:31 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:46:31 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:46:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-06 23:46:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-06 23:46:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/van-hoa-page0> (referer: None)
+2023-07-06 23:46:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/phap-luat-page0> (referer: None)
+2023-07-06 23:46:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thoi-su-page0> (referer: None)
+2023-07-06 23:46:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-gioi-page0> (referer: None)
+2023-07-06 23:46:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/du-lich-page0> (referer: None)
+2023-07-06 23:46:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/doi-song-page0> (referer: None)
+2023-07-06 23:46:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (referer: None)
+2023-07-06 23:46:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/bat-dong-san-page0> (referer: None)
+2023-07-06 23:46:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/kinh-doanh-page0> (referer: None)
+2023-07-06 23:46:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (referer: None)
+2023-07-06 23:46:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giai-tri-page0> (referer: None)
+2023-07-06 23:46:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/suc-khoe-page0> (referer: None)
+2023-07-06 23:46:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-thao-page0> (referer: None)
+2023-07-06 23:46:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giao-duc-page0> (referer: None)
+2023-07-06 23:46:43 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-06 23:46:43 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 4759,
+ 'downloader/request_count': 16,
+ 'downloader/request_method_count/GET': 16,
+ 'downloader/response_bytes': 2363305,
+ 'downloader/response_count': 16,
+ 'downloader/response_status_count/200': 16,
+ 'elapsed_time_seconds': 12.099573,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 46, 43, 533565),
+ 'log_count/DEBUG': 19,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82251776,
+ 'memusage/startup': 82251776,
+ 'response_received_count': 16,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 15,
+ 'scheduler/dequeued/memory': 15,
+ 'scheduler/enqueued': 15,
+ 'scheduler/enqueued/memory': 15,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 46, 31, 433992)}
+2023-07-06 23:46:43 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-06 23:47:15 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:47:15 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:47:15 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:47:15 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:47:15 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:47:15 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:47:15 [scrapy.extensions.telnet] INFO: Telnet Password: 2bebb4f89f6cfda9
+2023-07-06 23:47:15 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:47:15 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:47:15 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:47:15 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:47:15 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:47:15 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:47:15 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:47:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-gioi-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-thao-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/du-lich-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/van-hoa-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/thoi-su-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/doi-song-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/giao-duc-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/phap-luat-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/kinh-doanh-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:21 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/suc-khoe-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/giai-tri-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/thoi-su-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/doi-song-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/van-hoa-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-gioi-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-thao-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/phap-luat-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:22 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/du-lich-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/giai-tri-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/suc-khoe-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/doi-song-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/thoi-su-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/doi-song-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/thoi-su-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/the-gioi-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/van-hoa-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/kinh-doanh-page0> (referer: None)
+2023-07-06 23:47:23 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/the-gioi-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/van-hoa-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/phap-luat-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/the-thao-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/phap-luat-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/the-thao-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/suc-khoe-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/du-lich-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:23 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:24 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/suc-khoe-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:24 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/du-lich-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:24 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/dan-toc-ton-giao-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:47:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/bat-dong-san-page0> (referer: None)
+2023-07-06 23:47:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giai-tri-page0> (referer: None)
+2023-07-06 23:47:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giao-duc-page0> (referer: None)
+2023-07-06 23:47:26 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-06 23:47:26 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 34,
+ 'downloader/exception_type_count/scrapy.core.downloader.handlers.http11.TunnelError': 34,
+ 'downloader/request_bytes': 11905,
+ 'downloader/request_count': 40,
+ 'downloader/request_method_count/GET': 40,
+ 'downloader/response_bytes': 810410,
+ 'downloader/response_count': 6,
+ 'downloader/response_status_count/200': 6,
+ 'elapsed_time_seconds': 10.46625,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 47, 26, 439461),
+ 'log_count/DEBUG': 33,
+ 'log_count/ERROR': 20,
+ 'log_count/INFO': 10,
+ 'memusage/max': 81862656,
+ 'memusage/startup': 81862656,
+ 'response_received_count': 6,
+ 'retry/count': 24,
+ 'retry/max_reached': 10,
+ 'retry/reason_count/scrapy.core.downloader.handlers.http11.TunnelError': 24,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 39,
+ 'scheduler/dequeued/memory': 39,
+ 'scheduler/enqueued': 39,
+ 'scheduler/enqueued/memory': 39,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 47, 15, 973211)}
+2023-07-06 23:47:26 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-06 23:48:12 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:48:12 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:48:12 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:48:12 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:48:12 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:48:12 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:48:12 [scrapy.extensions.telnet] INFO: Telnet Password: 24fff6c675756b08
+2023-07-06 23:48:12 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:48:12 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:48:12 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:48:12 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:48:12 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:48:12 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:48:12 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:48:13 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/robots.txt> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:14 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/robots.txt> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:14 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/robots.txt> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:14 [scrapy.downloadermiddlewares.robotstxt] ERROR: Error downloading <GET https://vietnamnet.vn/robots.txt>: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/chinh-tri-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/van-hoa-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/du-lich-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-thao-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/thoi-su-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-gioi-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/giai-tri-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/phap-luat-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/giao-duc-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/kinh-doanh-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:15 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/bat-dong-san-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/suc-khoe-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (failed 1 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-thao-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/thoi-su-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/van-hoa-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/chinh-tri-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/the-gioi-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/phap-luat-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/kinh-doanh-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/bat-dong-san-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:16 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/giao-duc-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/giai-tri-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/suc-khoe-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/van-hoa-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (failed 2 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/chinh-tri-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/van-hoa-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/chinh-tri-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/thoi-su-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/thoi-su-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/the-thao-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/giao-duc-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/the-gioi-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/phap-luat-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/the-thao-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/giao-duc-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/the-gioi-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/phap-luat-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:17 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/bat-dong-san-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/bat-dong-san-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/kinh-doanh-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/giai-tri-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET https://vietnamnet.vn/suc-khoe-page0> (failed 3 times): Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/kinh-doanh-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/giai-tri-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/dan-toc-ton-giao-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:18 [scrapy.core.scraper] ERROR: Error downloading <GET https://vietnamnet.vn/suc-khoe-page0>
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/downloader/middleware.py", line 54, in process_request
+    return (yield download_func(request=request, spider=spider))
+scrapy.core.downloader.handlers.http11.TunnelError: Could not open CONNECT tunnel with proxy p.webshare.io:80 [{'status': 402, 'reason': b'Payment Required'}]
+2023-07-06 23:48:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/doi-song-page0> (referer: None)
+2023-07-06 23:48:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/du-lich-page0> (referer: None)
+2023-07-06 23:48:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (referer: None)
+2023-07-06 23:48:24 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-06 23:48:24 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 41,
+ 'downloader/exception_type_count/scrapy.core.downloader.handlers.http11.TunnelError': 41,
+ 'downloader/request_bytes': 13080,
+ 'downloader/request_count': 44,
+ 'downloader/request_method_count/GET': 44,
+ 'downloader/response_bytes': 470546,
+ 'downloader/response_count': 3,
+ 'downloader/response_status_count/200': 3,
+ 'elapsed_time_seconds': 11.943565,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 48, 24, 602648),
+ 'log_count/DEBUG': 34,
+ 'log_count/ERROR': 26,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82198528,
+ 'memusage/startup': 82198528,
+ 'response_received_count': 3,
+ 'retry/count': 28,
+ 'retry/max_reached': 13,
+ 'retry/reason_count/scrapy.core.downloader.handlers.http11.TunnelError': 28,
+ "robotstxt/exception_count/<class 'scrapy.core.downloader.handlers.http11.TunnelError'>": 1,
+ 'robotstxt/request_count': 1,
+ 'scheduler/dequeued': 41,
+ 'scheduler/dequeued/memory': 41,
+ 'scheduler/enqueued': 41,
+ 'scheduler/enqueued/memory': 41,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 48, 12, 659083)}
+2023-07-06 23:48:24 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-06 23:49:50 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:49:50 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:49:50 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:49:50 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:49:50 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:49:50 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:49:50 [scrapy.extensions.telnet] INFO: Telnet Password: a417e458611504fe
+2023-07-06 23:49:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:49:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:49:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:49:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:49:50 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:49:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:49:50 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:49:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-06 23:49:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-06 23:49:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/phap-luat-page0> (referer: None)
+2023-07-06 23:50:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-thao-page0> (referer: None)
+2023-07-06 23:50:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (referer: None)
+2023-07-06 23:50:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/van-hoa-page0> (referer: None)
+2023-07-06 23:50:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/doi-song-page0> (referer: None)
+2023-07-06 23:50:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giai-tri-page0> (referer: None)
+2023-07-06 23:50:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thoi-su-page0> (referer: None)
+2023-07-06 23:50:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giao-duc-page0> (referer: None)
+2023-07-06 23:50:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/bat-dong-san-page0> (referer: None)
+2023-07-06 23:50:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-gioi-page0> (referer: None)
+2023-07-06 23:50:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/du-lich-page0> (referer: None)
+2023-07-06 23:50:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/kinh-doanh-page0> (referer: None)
+2023-07-06 23:50:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/suc-khoe-page0> (referer: None)
+2023-07-06 23:50:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (referer: None)
+2023-07-06 23:50:04 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-06 23:50:04 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 4759,
+ 'downloader/request_count': 16,
+ 'downloader/request_method_count/GET': 16,
+ 'downloader/response_bytes': 2363303,
+ 'downloader/response_count': 16,
+ 'downloader/response_status_count/200': 16,
+ 'elapsed_time_seconds': 13.348483,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 50, 4, 206504),
+ 'log_count/DEBUG': 19,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82255872,
+ 'memusage/startup': 82255872,
+ 'response_received_count': 16,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 15,
+ 'scheduler/dequeued/memory': 15,
+ 'scheduler/enqueued': 15,
+ 'scheduler/enqueued/memory': 15,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 49, 50, 858021)}
+2023-07-06 23:50:04 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-06 23:50:36 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:50:36 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:50:36 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:50:36 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:50:36 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:50:36 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:50:36 [scrapy.extensions.telnet] INFO: Telnet Password: 5ae61542416bb115
+2023-07-06 23:50:36 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:50:36 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:50:36 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:50:37 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:50:37 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:50:37 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:50:37 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:50:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-06 23:50:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-06 23:50:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/phap-luat-page0> (referer: None)
+2023-07-06 23:50:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giai-tri-page0> (referer: None)
+2023-07-06 23:50:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giao-duc-page0> (referer: None)
+2023-07-06 23:50:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/doi-song-page0> (referer: None)
+2023-07-06 23:50:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-gioi-page0> (referer: None)
+2023-07-06 23:50:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (referer: None)
+2023-07-06 23:50:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/du-lich-page0> (referer: None)
+2023-07-06 23:50:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/suc-khoe-page0> (referer: None)
+2023-07-06 23:50:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/kinh-doanh-page0> (referer: None)
+2023-07-06 23:50:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thoi-su-page0> (referer: None)
+2023-07-06 23:50:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/bat-dong-san-page0> (referer: None)
+2023-07-06 23:50:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-thao-page0> (referer: None)
+2023-07-06 23:50:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/van-hoa-page0> (referer: None)
+2023-07-06 23:50:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (referer: None)
+2023-07-06 23:50:58 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-06 23:50:58 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 4759,
+ 'downloader/request_count': 16,
+ 'downloader/request_method_count/GET': 16,
+ 'downloader/response_bytes': 2363308,
+ 'downloader/response_count': 16,
+ 'downloader/response_status_count/200': 16,
+ 'elapsed_time_seconds': 21.031832,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 50, 58, 193855),
+ 'log_count/DEBUG': 19,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82268160,
+ 'memusage/startup': 82268160,
+ 'response_received_count': 16,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 15,
+ 'scheduler/dequeued/memory': 15,
+ 'scheduler/enqueued': 15,
+ 'scheduler/enqueued/memory': 15,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 50, 37, 162023)}
+2023-07-06 23:50:58 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-06 23:51:20 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:51:20 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:51:20 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:51:20 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:51:20 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:51:20 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:51:20 [scrapy.extensions.telnet] INFO: Telnet Password: c559b4977386d8d5
+2023-07-06 23:51:21 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:51:21 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:51:21 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:51:21 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:51:21 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:51:21 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:51:21 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:51:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-06 23:51:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-06 23:51:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/phap-luat-page0> (referer: None)
+2023-07-06 23:51:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thoi-su-page0> (referer: None)
+2023-07-06 23:51:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giai-tri-page0> (referer: None)
+2023-07-06 23:51:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giao-duc-page0> (referer: None)
+2023-07-06 23:51:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/doi-song-page0> (referer: None)
+2023-07-06 23:51:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (referer: None)
+2023-07-06 23:51:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/van-hoa-page0> (referer: None)
+2023-07-06 23:51:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-thao-page0> (referer: None)
+2023-07-06 23:51:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-gioi-page0> (referer: None)
+2023-07-06 23:51:37 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2023-07-06 23:51:37 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2023-07-06 23:51:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/bat-dong-san-page0> (referer: None)
+2023-07-06 23:51:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (referer: None)
+2023-07-06 23:51:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/du-lich-page0> (referer: None)
+2023-07-06 23:51:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/kinh-doanh-page0> (referer: None)
+2023-07-06 23:51:38 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2023-07-06 23:51:38 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://vietnamnet.vn/suc-khoe-page0. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2023-07-06 23:51:38 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://vietnamnet.vn/suc-khoe-page0> (failed 1 times): [<twisted.python.failure.Failure OpenSSL.SSL.Error: [('SSL routines', '', 'unexpected eof while reading')]>, <twisted.python.failure.Failure twisted.web.http._DataLoss: Chunked decoder in 'BODY' state, still expecting more data to get to 'FINISHED' state.>]
+2023-07-06 23:51:38 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseFailed': 1,
+ 'downloader/request_bytes': 4759,
+ 'downloader/request_count': 16,
+ 'downloader/request_method_count/GET': 16,
+ 'downloader/response_bytes': 2210256,
+ 'downloader/response_count': 15,
+ 'downloader/response_status_count/200': 15,
+ 'elapsed_time_seconds': 17.743426,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 51, 38, 972316),
+ 'log_count/DEBUG': 19,
+ 'log_count/INFO': 12,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 82120704,
+ 'memusage/startup': 82120704,
+ 'response_received_count': 15,
+ 'retry/count': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseFailed': 1,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 15,
+ 'scheduler/dequeued/memory': 15,
+ 'scheduler/enqueued': 16,
+ 'scheduler/enqueued/memory': 16,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 51, 21, 228890)}
+2023-07-06 23:51:38 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2023-07-06 23:52:48 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:52:48 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:52:48 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:52:48 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:52:48 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:52:48 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:52:48 [scrapy.extensions.telnet] INFO: Telnet Password: 8e9a3f4613cb6824
+2023-07-06 23:52:48 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:52:48 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:52:48 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:52:48 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:52:48 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:52:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:52:48 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:52:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-06 23:52:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-tp-ha-noi-chac-chan-se-co-chuyen-bien-tich-cuc-trong-chuyen-doi-so-2162097.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-gia-tang-noi-dia-hoa-vu-khi-trang-bi-va-san-pham-quoc-phong-2161952.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/dam-noi-dam-lam-nhung-phai-noi-dung-lam-dung-2162430.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-nuoc-vo-van-thuong-chu-tri-lam-viec-ve-giai-quyet-ho-so-an-tu-hinh-2162138.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/nguyen-truong-ban-to-chuc-trung-uong-le-phuoc-tho-tu-tran-2162325.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/ha-noi-xac-dinh-chuyen-doi-so-de-tao-dot-pha-trong-qua-trinh-phat-trien-2161766.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/pho-thu-tuong-tran-luu-quang-thuc-hien-dong-bo-giai-phap-de-tngt-giam-ben-vung-2162120.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-yeu-cau-bo-sung-noi-dung-sap-nhap-huyen-xa-vao-quy-hoach-tinh-2161739.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-pham-minh-chinh-du-hoi-nghi-quan-chinh-toan-quan-2161731.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/sap-nhap-huyen-xa-gap-vuong-voi-quy-hoach-tinh-2161667.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/hai-kich-ban-tang-truong-gdp-6-thang-cuoi-nam-2161532.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tp-hcm-kien-nghi-chinh-phu-giao-bien-che-theo-tung-giai-doan-va-co-cau-dan-so-2161444.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tuyen-giao-phai-du-bao-tham-muu-tinh-hinh-kip-thoi-2161448.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-nuoc-vo-van-thuong-tham-gia-ban-thuong-vu-quan-uy-trung-uong-2161171.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-khong-noi-khong-khong-noi-kho-khong-noi-co-ma-khong-lam-2161706.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-chu-tri-hoi-nghi-truc-tuyen-toan-quoc-chinh-phu-voi-cac-dia-phuong-2161431.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/nu-pho-tong-thu-ky-lien-hop-quoc-viet-nam-se-tro-thanh-hinh-mau-cho-phat-trien-2161314.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/ngoai-giao-kinh-te-can-tranh-thu-moi-co-hoi-de-thuc-day-cac-dong-luc-tang-truong-2161352.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-quoc-hoi-de-nghi-ha-noi-som-hien-thuc-hoa-quy-hoach-phan-khu-song-hong-2161106.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tong-bi-thu-nguyen-phu-trong-chu-tri-hoi-nghi-quan-uy-trung-uong-lan-thu-sau-2161062.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tong-bi-thu-ren-luyen-can-bo-quan-doi-theo-tinh-than-7-dam-2161246.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chan-dung-4-pho-giam-doc-vua-duoc-bo-cong-an-dieu-dong-bo-nhiem-2161124.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-yeu-cau-chu-dong-phong-chong-sat-lo-truoc-va-trong-mua-mua-lu-2160835.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/bi-thu-ha-noi-tinh-trang-thieu-truong-hoc-se-dan-duoc-khac-phuc-2160578.html'}
+2023-07-06 23:52:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/bi-thu-huyen-uy-cu-m-gar-lam-chanh-van-phong-tinh-uy-dak-lak8-2161144.html'}
+2023-07-06 23:52:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thong-tin-truyen-thong-page0> (referer: None)
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/ung-dung-threads-huy-diet-twitter-la-ac-mong-bao-mat-2162515.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/97-nha-mang-dua-ai-tao-sinh-vao-chuong-trinh-nghi-su-2162467.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/an-do-tham-vong-san-xuat-con-chip-dau-tien-vao-cuoi-nam-2024-2162326.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/robot-khong-the-thay-the-con-nguoi-trong-linh-vuc-sang-tao-2161904.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/lien-minh-thinh-vuong-so-cho-chau-a-ra-mat-tai-viet-nam-2162531.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/xu-ly-thanh-cong-chieu-tro-phat-tan-tin-nhan-rac-cua-tram-bts-gia-2162147.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/luu-tru-du-lieu-don-gian-tiet-kiem-chi-phi-tren-bizfly-cloud-backup-2162513.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/viet-nam-da-co-85-7-trieu-thue-bao-bang-rong-di-dong-2160175.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/game-co-bac-tung-hoanh-tren-mang-xa-hoi-2162071.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/khach-hang-vua-mo-app-momo-chung-toi-da-doan-duoc-khach-hang-dinh-lam-gi-2162489.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/internet-ve-tinh-mang-lai-tiem-nang-hop-tac-cho-cac-nha-mang-truyen-thong-2161901.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/giai-dap-nhieu-van-de-nong-cua-nganh-tt-tt-2162160.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/cang-nagoya-lon-nhat-nhat-ban-bi-tan-cong-mang-2162279.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/lua-dao-truc-tuyen-chuyen-huong-nham-toi-nguoi-cao-tuoi-tre-em-2162126.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/ly-giai-nguyen-nhan-nhieu-xe-may-cua-cuon-dung-smartkey-khong-the-hoat-dong-2162128.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/phat-hien-nhieu-chu-thue-bao-anh-coi-tran-nhung-van-dang-ky-thanh-cong-sim-2162101.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/tat-ca-doanh-nghiep-muon-canh-tranh-deu-phai-dua-tren-du-lieu-2162041.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/chu-tich-tp-ha-noi-chac-chan-se-co-chuyen-bien-tich-cuc-trong-chuyen-doi-so-2162097.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/doanh-nghiep-viet-chuyen-minh-trong-nen-kinh-te-du-lieu-2161930.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/neu-ap-thue-tieu-thu-dac-biet-game-viet-se-chet-tren-san-nha-2161937.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/thach-thuc-lon-voi-chuyen-doi-so-viet-nam-la-nhieu-du-lieu-khong-mo-2161922.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/doanh-nghiep-vien-thong-dang-tut-hau-ve-ai-2161840.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/dung-chung-ha-tang-giup-nha-mang-cat-giam-hang-ty-dong-chi-phi-2161781.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/sinh-vien-hoc-cntt-ung-dung-tai-ptit-se-thuc-tap-doanh-nghiep-tu-nam-nhat-2162010.html'}
+2023-07-06 23:52:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thong-tin-truyen-thong-page0>
+{'Topic': '/tu-van-doanh-nghiep-tro-thanh-nguon-thu-moi-cac-nha-mang-tai-chau-phi-2161386.html'}
+2023-07-06 23:52:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/thoi-su-page0> (referer: None)
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/di-tam-suoi-cung-vo-con-nguoi-dan-ong-bi-nuoc-cuon-tu-vong-2162632.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/tai-khoi-dong-du-an-trung-tam-trien-lam-800-ty-dong-o-thu-thiem-sau-8-nam-2162613.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/bo-gtvt-chan-chinh-tinh-trang-mat-an-toan-an-toan-hang-khong-2162592.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/khoi-to-nhom-thanh-nien-mo-tiec-ma-tuy-3-ngay-lien-tuc-2162415.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/xu-ly-hang-tram-truong-hop-cheo-keo-khach-tren-bo-di-bo-nguyen-hue-2162555.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/mot-so-phi-cong-chua-tuan-thu-viec-khong-che-toc-do-o-san-bay-tan-son-nhat-2162508.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/se-khoi-cong-nha-ga-san-bay-long-thanh-35-nghin-ty-dong-trong-thang-8-2162591.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/tang-cuong-ho-tro-binh-dinh-quan-ly-tau-ca-som-go-the-vang-ec-2162579.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/tay-nguyen-nhung-thang-ngay-nong-bong-2161993.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/nguyen-chu-tich-phuong-o-tp-cao-bang-bi-bat-tam-giam-2162495.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/bat-qua-tang-nhom-xit-son-quang-cao-web-co-bac-len-ghe-da-cong-cong-2162505.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/se-thi-cong-tro-lai-nhieu-goi-thau-cao-toc-ben-luc-long-thanh-2162469.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/thien-tai-lam-49-nguoi-chet-thiet-hai-308-ty-dong-2162423.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/tp-hcm-de-xuat-tuyen-dung-can-bo-khong-lay-y-kien-bo-nganh-2162422.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/dai-tuong-nguyen-chi-thanh-vi-tuong-tai-ba-nguoi-cha-binh-di-2162460.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/thieu-tuong-dinh-van-noi-yeu-cau-khac-phuc-ton-tai-trong-dieu-tra-an-2162339.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/nhieu-may-bay-can-dinh-cuc-hang-khong-yeu-cau-kiem-soat-vat-the-la-2162461.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/nam-tai-xe-dung-dui-cui-dien-di-nhieu-lan-vao-nhan-vien-san-bay-2162395.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/thue-nha-tren-15m2-moi-duoc-dang-ky-thuong-tru-o-ha-noi-2162372.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/du-kien-khoi-cong-tuyen-cao-toc-tp-hcm-moc-bai-nam-2024-2162383.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/o-to-cho-3-nguoi-o-tp-hcm-lao-len-via-he-tong-gay-cay-xanh-roi-lat-nhao-2162329.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/phat-hien-bo-xuong-nguoi-trong-nha-ve-sinh-o-tien-giang-2162405.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/thoi-tiet-ha-noi-nang-nong-lien-tiep-3-ngay-toi-2162174.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/nghi-pham-dam-chet-ban-da-ra-dau-thu-2162297.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/thoi-su-page0>
+{'Topic': '/truong-phong-tu-phap-bi-cach-chuc-vi-an-trom-cay-hoa-giay-2162307.html'}
+2023-07-06 23:52:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/van-hoa-page0> (referer: None)
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/bo-van-hoa-xac-minh-cong-ty-to-chuc-blackpink-ung-ho-duong-luoi-bo-2162146.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/hon-ca-hanh-phuc-minh-triet-phat-giao-va-chu-nghia-khac-ky-2162324.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/tuoi-54-cua-thanh-thanh-hien-nhan-sac-tre-dep-lac-quan-don-tinh-yeu-cuoc-song-2162219.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/cuon-truyen-harry-potter-co-the-ban-voi-gia-150-trieu-dong-2160674.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/con-gai-nsut-vu-linh-mong-tim-duoc-ky-vat-that-lac-cua-cha-2161925.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/cu-hich-nao-de-co-nhung-tac-pham-ly-luan-phe-binh-xuat-sac-2159911.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/hoa-hau-ban-mai-lam-dai-su-le-hoi-o-da-nang-2161953.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/nhac-si-nguyen-quang-tiet-lo-cuoc-song-hien-tai-cua-ngo-thuy-mien-2161364.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/cham-vao-ky-uc-cua-bong-hong-ben-canh-nha-van-dai-ta-chu-lai-2157935.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/cuoc-thi-nhay-mua-quy-mo-lon-to-chuc-tai-viet-nam-2161787.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/hinh-anh-hai-ba-trung-tren-thiet-ke-dong-ho-thuy-si-la-cua-hoa-si-xuan-lam-2161573.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/vi-sao-doi-ngu-phe-binh-van-hoc-nghe-thuat-ngay-cang-teo-top-2159784.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/nsnd-hong-van-thoi-tre-xung-tam-my-nhan-khien-nhieu-chang-trai-trong-cay-si-2161609.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/can-canh-den-mau-bi-nghieng-do-sut-lun-nghiem-trong-2161737.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/the-beatles-se-khong-bao-gio-dung-ai-gia-giong-john-lennon-2161081.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/nghe-thuat-khen-cua-nguoi-mong-tro-thanh-di-san-van-hoa-phi-vat-the-quoc-gia-2161397.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/ha-noi-mien-phi-su-dung-thu-vien-de-khuyen-khich-phat-trien-van-hoa-doc-2161700.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/nguoi-viet-noi-tieng-viet-2161349.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/kich-nong-ve-hon-nhan-ngoai-tinh-cua-nsut-my-uyen-2160933.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/thoi-tre-nsut-thanh-quy-dep-den-muc-duoc-goi-la-my-nhan-man-anh-2161060.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/binh-yen-nuoc-my-2159747.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/noi-so-cua-anh-chanh-van-2152293.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/nsnd-le-khanh-va-nhan-sac-nhu-mot-bieu-tuong-qua-nhung-thuoc-phim-2161322.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/dot-duoc-di-tim-nha-phe-binh-van-hoc-nghe-thuat-2158722.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/van-hoa-page0>
+{'Topic': '/noi-kho-cua-thanh-thanh-hien-khi-dat-canh-xuan-hinh-2160496.html'}
+2023-07-06 23:52:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/doi-song-page0> (referer: None)
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/chuyen-vo-chong-dua-nhau-vao-vien-tam-than-xon-xao-du-luan-trung-quoc-2161567.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/vi-1-cau-noi-cua-em-chong-vo-bo-ve-nha-ngoai-mac-ke-me-toi-nam-liet-giuong-2161850.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/dang-hong-gio-truoc-san-co-gai-giat-minh-thay-vat-the-la-tren-troi-roi-xuong-2161804.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/doc-dao-pho-cuoi-hoi-trau-cau-tai-tp-hcm-2161795.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/chu-quan-moi-cau-be-nhat-ve-chai-an-to-pho-mien-phi-2162039.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/con-trai-nghe-vo-chiem-so-do-me-gia-80-tuoi-xot-xa-dam-don-kien-2161063.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/sap-ra-mat-the-gioi-giai-tri-vinwonders-o-phia-dong-ha-noi-2162562.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/cap-song-sinh-chia-ly-khi-chao-doi-tai-ngo-sau-30-nam-va-la-thu-tim-me-2161818.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/moi-thu-cua-chung-ta-roi-se-tan-phai-chi-co-tinh-thuong-o-lai-2161776.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/tim-video-ve-ban-gai-cu-cua-nguoi-yeu-trong-dien-thoai-co-gai-bi-phat-230-usd-2159642.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/quan-ly-thuoc-la-the-he-moi-thuoc-la-dien-tu-can-che-tai-gi-2162133.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/cau-be-6-tuoi-bi-me-danh-du-luan-trung-quoc-phan-no-2161608.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/nguoi-dau-tien-tren-the-gioi-duoc-ghep-mat-da-tim-thay-tinh-yeu-2161391.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/ba-lan-ban-pho-o-noi-sieu-dac-biet-cua-ong-chu-noi-tieng-ha-thanh-2161347.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/nguoi-phu-nu-bat-ngo-song-lai-khi-dang-tren-duong-den-noi-to-chuc-tang-le-2161548.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/vi-khach-dac-biet-khien-chu-tiem-xam-xuc-dong-quyet-dinh-lam-mien-phi-2161132.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/hen-ho-tinder-tuong-tim-duoc-mot-nua-hoan-hao-hoa-ra-gap-so-khanh-chinh-hieu-2160796.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/vo-chong-son-tap-513-nu-tiktoker-ke-chuyen-ngai-cuoi-yeu-11-nam-moi-ket-hon-2161098.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/dam-cuoi-vo-41-tuoi-cuoi-chong-23-tuoi-2160903.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/tinh-tram-nam-tap-152-chua-yeu-da-cuoi-vo-chong-van-hanh-phuc-suot-55-nam-2161157.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/nguoi-dap-dien-thoai-cua-nam-sinh-thua-nhan-co-long-tham-noi-loi-xin-loi-2161119.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/a-hau-hoa-binh-viet-nam-2022-quan-gia-han-tham-gia-hien-mau-cuu-nguoi-2161675.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/kiem-hang-tram-nghin-usd-nho-hoi-nguoi-la-mot-cau-duy-nhat-2161388.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/go-cua-tham-nha-tap-170-chuyen-tinh-chang-thac-si-va-nu-phat-thanh-vien-2160838.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/doi-song-page0>
+{'Topic': '/co-mon-nao-day-cho-nguoi-ta-bot-buong-loi-cay-nghiet-khong-2160778.html'}
+2023-07-06 23:52:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-thao-page0> (referer: None)
+2023-07-06 23:52:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/the-gioi-page0> (referer: None)
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/nguyen-thi-oanh-cung-tuyen-dien-kinh-duoc-nhan-thuong-2162616.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tuyen-nu-viet-nam-5-cau-thu-cho-khai-hoa-o-world-cup-2162166.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/erik-ten-hag-banh-bao-di-an-toi-cho-don-them-2-hop-dong-ve-mu-2162523.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tuyen-nu-viet-nam-gay-sot-o-new-zealand-2162452.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/chu-tich-totteham-tuc-gian-bayern-munich-di-dem-harry-kane-2162387.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/chu-tich-psg-canh-bao-gat-mbappe-dung-doi-qua-mat-chung-toi-2162295.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tuyen-nu-viet-nam-nem-cai-lanh-duoi-10-do-c-o-new-zealand-2162478.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tottenham-tang-luong-khung-ngan-harry-kane-den-mu-bayern-munich-2162278.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/cup-quoc-gia-vong-1-8-bong-hay-vi-quang-hai-va-cahn-2162169.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tuyen-nu-viet-nam-do-bo-new-zealand-san-sang-cho-world-cup-2162218.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tin-chuyen-nhuong-6-7-mu-gay-soc-voi-militao-man-city-ban-silva-2162209.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/nhan-dinh-vong-1-8-cup-quoc-gia-nong-o-hang-day-2162161.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/giai-vo-dich-golf-quoc-gia-ho-tro-100-cho-tuyen-thu-du-asiad-2162385.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/wimbledon-2023-djokovic-vat-va-vao-vong-3-2162056.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/garnacho-bay-to-thai-do-khi-mason-mount-la-so-7-moi-cua-mu-2162197.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/lich-thi-dau-bong-da-hom-nay-6-7-2162040.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/daniil-medvedev-thang-tien-vong-3-wimbledon-2162242.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tsitsipas-di-tiep-o-wimbeldon-sau-man-tra-tan-the-luc-voi-dominic-thiem-2162258.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/ket-qua-bong-da-hom-nay-6-7-2162049.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/mason-mount-ra-mat-cuc-chat-mac-ao-so-7-mu-2162141.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/arsenal-chieu-mo-thanh-cong-jurrien-timber-2162177.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/lo-luong-that-mason-mount-o-mu-chelsea-va-liverpool-tiec-re-2162172.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/lich-thi-dau-vong-1-8-cup-quoc-gia-2023-derby-thu-do-cahn-dau-nam-dinh-2127829.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/tuyen-nu-viet-nam-cho-5-tieng-o-san-bay-singapore-2162125.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-thao-page0>
+{'Topic': '/hlv-pochettino-tong-khu-ngay-4-ong-kenh-chelsea-2162084.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/belarus-noi-thoi-gian-chuyen-dau-dan-hat-nhan-cua-nga-neu-dieu-kien-voi-wagner-2162618.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/video-tiem-kich-nga-gay-han-uav-my-tai-syria-2162304.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/my-neu-dieu-kien-de-ukraine-vao-nato-nga-to-kiev-am-muu-pha-co-so-nang-luong-2162447.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/nga-thong-bao-truc-xuat-9-nha-ngoai-giao-phan-lan-2162603.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/ong-medvedev-neu-cach-cham-dut-xung-dot-o-ukraine-2162230.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/quan-chuc-trung-quoc-khong-tin-ukraine-ban-roi-ten-lua-sieu-thanh-cua-nga-2162233.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/hai-tau-chien-nga-cap-cang-trung-quoc-2162529.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/chang-trai-nam-duoi-san-may-bay-nhuong-ca-hang-ghe-cho-ban-gai-2162552.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/who-canh-bao-nguy-co-xay-ra-cac-su-kien-thoi-tiet-cuc-diem-2162498.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/cong-ty-duong-sat-phap-bi-phat-vi-de-tau-hoa-can-chet-meo-cua-khach-2162272.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/ong-zelensky-keu-goi-phan-cong-som-hon-hungary-ra-toi-hau-thu-cho-ukraine-2162299.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/ban-gai-ai-du-ke-cuc-doan-am-muu-am-sat-nu-hoang-elizabeth-ii-2162293.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/toa-an-o-thu-do-ukraine-rung-dong-vi-danh-bom-tu-sat-2162260.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/tau-luon-mac-ket-hanh-khach-bi-treo-nguoc-tren-khong-hang-gio-o-my-2162262.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/video-phao-tu-hanh-phap-ban-chay-khi-tai-nga-o-ukraine-2161846.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/video-hai-quan-my-ngan-iran-bat-giu-2-tau-cho-dau-o-vinh-oman-2162259.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/xe-buyt-dam-vao-khe-nui-o-mexico-27-nguoi-thiet-mang-2162247.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/may-bay-mh370-mat-tich-bi-an-9-nam-chua-co-loi-giai-2161742.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/osce-coi-wagner-la-to-chuc-khung-bo-2161836.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/nga-bac-tin-ong-tap-can-binh-canh-bao-ong-putin-khong-tan-cong-hat-nhan-ukraine-2162195.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/tong-thong-putin-don-vi-khach-8-tuoi-dac-biet-toi-dien-kremlin-2162076.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/ukraine-thanh-bai-thu-vu-khi-phuong-tay-co-so-nang-luong-nga-suyt-bi-tan-cong-2162130.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/dat-cho-di-dao-nguoi-phu-nu-bi-ca-sau-can-tu-vong-2162061.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/top-5-tap-doan-quan-su-tu-nhan-khet-tieng-the-gioi-2161404.html'}
+2023-07-06 23:52:59 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/the-gioi-page0>
+{'Topic': '/hungary-doa-chan-vien-tro-ukraine-nga-to-phuong-tay-giup-kiev-tap-kich-moscow-2162005.html'}
+2023-07-06 23:53:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giai-tri-page0> (referer: None)
+2023-07-06 23:53:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/du-lich-page0> (referer: None)
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/gia-dinh-minh-vui-bat-thinh-linh-tap-35-khai-tang-o-to-tien-ty-cho-tram-anh-2162254.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/sao-viet-5-7-trong-tan-nghi-show-keo-xe-bo-nsnd-hong-van-an-ngap-ban-hai-san-2162117.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/me-coco-lee-la-nguoi-dau-tien-phat-hien-con-gai-tu-tu-2162264.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/hong-phuong-toi-khong-lam-gi-trai-dao-duc-de-bi-cam-song-tren-truyen-hinh-2162113.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/xot-xa-tin-nhan-cuoi-cung-cua-ca-si-noi-tieng-coco-lee-truoc-khi-qua-doi-tuoi-48-2162221.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/hoa-hau-tuyet-nga-dung-tui-xach-gan-1-ty-di-su-kien-2162615.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/nhung-dieu-choang-vang-ve-sex-education-4-2162287.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/nu-btv-mai-ngoc-cua-vtv-co-vong-3-hon-1-met-nho-meo-nho-khi-an-toi-2162427.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/me-ruot-tre-dep-cua-dinh-tu-chong-mat-som-ca-doi-chi-cham-lo-cho-con-2162527.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/coco-lee-benh-tat-noi-dau-chong-ngoai-tinh-va-khao-khat-lam-me-2162271.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/phuong-thanh-ghen-tuong-voi-lam-truong-2162204.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/son-ye-jin-dien-do-nam-tinh-den-show-thoi-trang-cao-cap-tai-phap-2162428.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/noi-giac-mo-tim-ve-tap-29-mai-anh-met-moi-vi-cach-song-cua-bo-me-2162203.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/ca-si-thuy-bui-detox-moi-tuan-de-tham-gia-miss-grand-vietnam-2023-2162185.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/ca-si-coco-lee-tu-sat-o-tuoi-48-2162187.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/htv-len-tieng-khi-bi-chi-trich-phat-song-gameshow-co-hong-phuong-va-chong-2161777.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/thanh-huong-cuoc-doi-van-dep-sao-lan-dau-ke-ve-nhung-goc-khuat-it-biet-2161856.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/tu-thuong-lay-minh-loi-nhan-nhu-da-diet-cua-ca-si-tre-linh-lana-2162421.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/trang-nhung-tiet-lo-ly-do-tro-lai-showbiz-sau-9-nam-2162333.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/my-tam-tro-lai-lam-giam-khao-vietnam-idol-huy-tuan-bat-binh-2162183.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/noi-giac-mo-tim-ve-tap-28-gia-an-canh-cao-mai-anh-vi-lam-phien-phuong-2161782.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/me-ruot-cua-jennifer-pham-nhan-sac-tre-dep-song-kin-tieng-nuoi-chau-ngoai-2161933.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/phu-thuy-trang-diem-tony-nguyen-tiet-lo-bat-ngo-ve-mai-phuong-thuy-huyen-my-2151538.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/toa-hoan-xu-vi-diep-lam-anh-va-chong-cu-tranh-chap-quyen-nuoi-con-2161988.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giai-tri-page0>
+{'Topic': '/bo-mong-tay-dat-gia-cua-duong-le-binh-gay-tranh-cai-2162018.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/dac-san-binh-phuoc-thom-ngon-doc-la-thu-hut-du-khach-gan-xa-2161605.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/ca-voi-bat-ngo-xuat-hien-boi-luon-sat-bo-bien-o-hue-khien-du-khach-thich-thu-2162045.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/ben-trong-tran-dia-phao-hoa-quoc-te-o-da-nang-truoc-dem-thi-chung-ket-2161972.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/du-khach-viet-la-dai-dien-duy-nhat-tai-chau-a-vao-danh-sach-du-lich-co-y-thuc-2162119.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/du-khach-doa-dam-tiep-vien-dien-cuong-doi-mo-cua-khi-may-bay-sap-cat-canh-2161974.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/sieu-pham-titanic-vo-doi-chim-xuong-4-000-met-duoi-day-bien-nhu-the-nao-2161365.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/du-khach-cham-vao-sao-bien-lam-hai-san-ho-bi-bat-doi-mat-an-tu-2-nam-2159132.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/vu-nhan-vien-banh-mi-nguyen-sinh-danh-khach-dung-de-ton-tai-bun-mang-chao-chui-2161724.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/tran-may-bay-bat-ngo-nut-toac-hanh-khach-hoang-loan-nhieu-tiep-vien-bi-thuong-2161595.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/cot-tru-tau-luon-sieu-toc-cao-gan-tram-met-nut-gay-khien-du-khach-hoang-hon-2161792.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/vi-vu-pho-tren-nhung-chiec-xe-co-tich-o-ha-tien-2159744.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/bun-oc-ha-noi-70-nam-giu-vi-truyen-thong-quan-15m2-khach-chen-chuc-cho-an-2160213.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/da-nang-bung-no-voi-loat-le-hoi-tan-huong-mua-he-2161589.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/cau-di-bo-kieu-nhat-ban-doc-dao-nhat-viet-nam-2161300.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/nhieu-san-pham-du-lich-doc-la-khanh-hoa-don-2-8-trieu-luot-khach-trong-nua-nam-2161223.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/khach-viet-di-tour-du-lich-phap-bi-anh-huong-the-nao-boi-bao-loan-2161222.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/co-to-khach-dong-dot-bien-nha-nghi-homestay-chay-phong-2160014.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/ca-phe-xe-cub-tren-dinh-doi-da-lat-lich-mo-that-thuong-ma-khach-van-me-2158176.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/nu-hanh-khach-danh-rang-suc-mieng-ngay-cho-ngoi-tren-may-bay-2160742.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/nhom-ban-than-viet-tron-chong-con-vi-vu-chau-au-tro-lai-thanh-xuan-dieu-ki-2151743.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/lang-chai-cua-van-lot-top-lang-co-dep-nhu-tranh-cua-the-gioi-2160731.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/chu-quan-banh-mi-nguyen-sinh-bi-to-danh-khach-nhan-vien-chi-phay-tay-nhe-2160886.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/hon-dao-hinh-con-thu-ky-la-o-quy-nhon-2160852.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/bi-nham-la-nha-hang-danh-khach-banh-mi-nguyen-sinh-tai-tp-hcm-nhan-loat-1-sao-2160836.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/du-lich-page0>
+{'Topic': '/cu-ong-lien-tuc-dap-khung-bo-khach-ngoi-phia-tren-vi-toi-nga-ghe-2160465.html'}
+2023-07-06 23:53:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/giao-duc-page0> (referer: None)
+2023-07-06 23:53:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/kinh-doanh-page0> (referer: None)
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/nghich-ly-chen-lan-tranh-ve-vao-lop-10-nhung-dai-hoc-lai-khat-sinh-vien-2162029.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/them-3-truong-dai-hoc-o-ha-noi-cong-bo-diem-chuan-hoc-ba-nam-2023-2162414.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/nam-sinh-ha-noi-la-thu-khoa-kep-lop-10-chuyen-tin-mai-hoc-den-quen-ngu-2162208.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/phu-huynh-rot-tim-vi-diem-chuan-lop-10-nhay-mua-hon-san-chung-khoan-2161951.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/ga-tinh-nu-sinh-truong-khoa-cua-truong-dh-hai-phong-bi-ky-luat-canh-cao-2162189.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/phu-huynh-vay-kin-cong-truong-gianh-suat-vao-lop-10-cho-con-giua-dem-2161847.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/diem-chuan-va-hoc-phi-cac-truong-thuoc-dh-quoc-gia-tp-hcm-nam-2023-2161817.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/du-doan-diem-chuan-cua-dh-bach-khoa-ha-noi-nam-2023-2161859.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/ca-2-dap-an-dung-cua-1-cau-de-tieng-anh-thi-tot-nghiep-thpt-2023-duoc-cong-nhan-2162122.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/vu-lo-de-thi-tieng-anh-lop-10-o-kon-tum-12-thi-sinh-lien-quan-thi-lai-dot-2-2162114.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/giam-doc-so-gd-dt-ha-noi-khang-dinh-thu-do-khong-thieu-cho-hoc-2162063.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/dh-cmc-uu-dai-30-hoc-phi-cho-tan-sinh-vien-2161503.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/diem-chuan-hoc-ba-truong-dh-cong-doan-nam-2023-cao-nhat-la-26-2162090.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/xep-hang-xuyen-dem-gianh-suat-hoc-lop-10-cho-con-so-gd-dt-chi-dao-nong-2162051.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/truong-tieu-hoc-le-dinh-chinh-o-tp-hcm-bat-dau-vao-hoc-luc-8h-2162007.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/phu-huynh-ha-noi-thuc-trang-dem-gianh-suat-hoc-lop-10-cho-con-so-gd-dt-noi-gi-2161924.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/clip-phu-huynh-ha-noi-xuyen-dem-di-gianh-suat-lop-10-cho-con-2161867.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/tinh-nao-co-nhieu-ngon-nui-cao-nhat-viet-nam-2161886.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/thu-khoa-dai-hoc-dat-diem-cao-trong-lich-su-so-huu-muc-luong-1-ty-nam-2161544.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/de-thi-van-vao-dai-hoc-cua-trung-quoc-xem-nguoi-lai-ngam-den-ta-2161064.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/cach-xac-nhan-nhap-hoc-lop-10-ha-noi-nam-2023-sau-khi-trung-tuyen-2161708.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/33-000-hoc-sinh-ha-noi-truot-lop-10-cong-lap-cha-me-giup-con-doi-dien-the-nao-2161094.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/nu-sinh-ha-noi-thi-do-lop-10-cung-luc-vao-4-truong-thpt-chuyen-2161519.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/tranh-cai-ve-dap-an-mon-tieng-anh-thi-tot-nghiep-thpt-2023-2161587.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/giao-duc-page0>
+{'Topic': '/truong-dh-kinh-te-tai-chinh-tp-hcm-nhieu-muc-hoc-bong-cho-thi-sinh-ielts-6-0-2161635.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/lai-suat-ngan-hang-hom-nay-6-7-con-1-noi-lai-suat-8-gui-tien-o-dau-loi-nhat-2162261.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/nha-ong-bui-thanh-nhon-tai-san-tai-novaland-giam-nhanh-ai-nu-vot-vat-mua-vao-2162186.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/dai-gia-nguyen-cao-tri-mat-lien-lac-voi-hiep-hoi-doanh-nghiep-tp-hcm-2162194.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/da-lat-len-ke-hoach-trien-khai-thi-diem-phat-trien-kinh-te-dem-2162127.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/co-phieu-cua-dai-gia-do-quy-hai-shark-thuy-vao-dien-canh-bao-2162170.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/doanh-nghiep-che-bien-thuc-pham-an-lien-canh-tranh-bang-cong-nghe-2162496.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/giat-minh-voi-gia-thit-bo-uc-thuong-hang-ban-tren-cho-mang-2162124.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/gia-xang-dau-hom-nay-6-7-noi-dai-mach-tang-dau-brent-tang-76-usd-thung-2162188.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/tau-cho-800-ty-dong-khi-long-can-kho-phuc-tap-nhu-nha-may-dien-hat-nhan-den-vn-2162137.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/nong-nghiep-lap-nhieu-ky-luc-du-lich-giai-ngan-von-dau-tu-cong-tang-toc-2162145.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/lam-tot-duong-bang-du-lich-se-cat-canh-2162105.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/tim-thay-chu-nhan-trung-doc-dac-vietlott-hon-39-ty-dong-2162154.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/gia-vang-hom-nay-6-7-vua-hoi-suc-vang-lai-giam-gia-2162164.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/ban-tin-tai-chinh-sang-6-7-gia-vang-dau-va-usd-cung-di-len-2162201.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/gia-vang-mieng-lao-doc-mat-moc-67-trieu-dong-luong-2162107.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/hon-2-2-ty-co-phieu-vietnam-airlines-bi-han-che-giao-dich-vao-dien-canh-bao-2162092.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/ca-si-khanh-phuong-bi-phat-mua-chui-co-phieu-sjc-do-vo-lam-chu-tich-2161995.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/dai-gia-bi-chan-giao-dich-bds-nguyen-cao-tri-mang-luoi-kinh-doanh-cuc-khung-2161696.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/uy-ban-canh-tranh-quoc-gia-canh-bao-doanh-nghiep-da-cap-hoat-dong-chui-2161912.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/bds-ninh-van-bay-chu-tich-luong-0-dong-hoa-hau-ngoc-han-linh-gan-1-ty-2161712.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/gia-vang-hom-nay-5-7-gia-vang-giam-nhe-ap-luc-con-nhieu-2161736.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/mot-nganh-hang-linh-vuc-nong-nghiep-xuat-sieu-5-32-ty-usd-2161668.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/ban-tin-tai-chinh-sang-5-7-gia-vang-va-dau-tang-usd-quay-dau-di-xuong-2161754.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/chan-con-loc-hang-ngoai-nhap-bao-ve-san-xuat-trong-nuoc-2160789.html'}
+2023-07-06 23:53:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/kinh-doanh-page0>
+{'Topic': '/gia-xang-dau-hom-nay-5-7-noi-dai-da-tang-2161744.html'}
+2023-07-06 23:53:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/phap-luat-page0> (referer: None)
+2023-07-06 23:53:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/bat-dong-san-page0> (referer: None)
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/theo-doi-qua-camera-bat-qua-tang-giup-viec-trom-tien-o-ha-noi-2162450.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/bat-doi-tuong-nguoi-nuoc-ngoai-mua-ban-gan-1kg-ma-tuy-2162584.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/bat-ke-tron-truy-na-14-nam-dang-hoat-dong-bao-ke-2162373.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/khoi-to-7-doi-tuong-lua-ban-hiep-dam-nguoi-duoi-16-tuoi-o-vinh-phuc-2162407.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/phat-hien-sung-kiem-trong-truong-ga-o-binh-duong-2162327.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/dinh-chi-cong-tac-can-bo-cong-an-bi-to-danh-nguoi-tai-tru-o-hung-yen-2162226.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/bat-giam-doc-van-phong-dang-ky-dat-dai-o-lam-dong-2162142.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/truy-bat-nghi-pham-dam-chet-ban-cho-den-benh-vien-roi-bo-tron-2162198.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/nguoi-dan-ong-dua-nhieu-lao-dong-trong-xa-vuot-bien-sang-trung-quoc-2162163.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/ha-noi-bat-doi-tuong-tron-truy-na-6-nam-toi-giet-nguoi-2162182.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/khoi-to-vu-an-vo-y-giet-nguoi-o-co-so-trong-tre-tu-phat-2162098.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/khoi-to-3-can-bo-tao-ho-so-khong-giay-chung-nhan-quyen-su-dung-dat-2162144.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/cap-vo-chong-dua-nguoi-gia-khuyet-tat-ra-ha-noi-thuc-ep-ban-hang-rong-xin-an-2162048.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/ong-trum-khai-thac-cat-trai-phep-cung-vo-va-con-gai-nhan-an-tu-2162023.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/khoi-to-7-bi-can-trong-vu-ban-co-gai-o-tphcm-qua-bien-gioi-2161989.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/lua-dao-chiem-doat-tien-ty-cua-ngan-hang-mang-ve-dua-vo-2161983.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/con-trai-sat-hai-cha-ruot-tai-chung-cu-o-tp-vung-tau-2161920.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/bat-giu-mot-can-bo-cong-ty-cao-su-o-binh-phuoc-nghi-hiep-dam-be-11-tuoi-2161945.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/bat-doi-tuong-tron-truy-na-tu-tp-hcm-len-vung-nui-phia-bac-2161873.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/mua-giay-chung-minh-cand-gia-voi-y-do-qua-mat-canh-sat-giao-thong-2161819.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/long-an-bat-10-doi-tuong-lien-quan-duong-day-mua-ban-nguoi-2161602.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/bat-nguoi-dan-ong-tang-tru-sung-dan-trong-nha-2161723.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/khoi-to-vu-hai-nhom-thanh-nien-hon-chien-gay-nao-loan-2161704.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/bat-2-thanh-nien-dua-2-thieu-nu-vao-can-ho-chung-cu-su-dung-ma-tuy-2161729.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/phap-luat-page0>
+{'Topic': '/kieu-nu-thue-xe-tu-lai-roi-mat-dang-o-ha-noi-2161583.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/doanh-nghiep-bi-phat-230-trieu-dong-vi-khong-to-chuc-hoi-nghi-nha-chung-cu-2161942.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/nha-dat-dong-bang-dau-co-mac-can-o-diem-nong-tinh-dak-lak-2161318.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/ha-noi-thong-tin-moi-nhat-ve-du-an-tren-dat-vang-giang-vo-2161660.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/xuat-hien-shophouse-cat-lo-tien-ty-co-nen-xuong-tien-dau-tu-luc-nay-2161499.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/quang-ngai-bao-cao-thu-tuong-go-kho-du-an-bat-dong-san-2161695.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/ra-mat-du-an-glory-heights-dau-an-hao-quang-giua-long-vinhomes-grand-park-2162524.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/mega-grand-world-diem-den-giai-tri-moi-o-phia-dong-ha-noi-2162521.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/ngan-chan-moi-giao-dich-nha-dat-cua-dai-gia-nguyen-cao-tri-2161478.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/binh-thuan-lap-to-cong-tac-dac-biet-go-kho-khan-cho-doanh-nghiep-nha-dau-tu-2161711.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/nha-dat-thai-nguyen-co-dau-hieu-tich-cuc-cam-phan-lo-ban-nen-nhieu-khu-vuc-2161594.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/phi-ho-so-nha-dat-co-loai-tang-ca-chuc-lan-tp-hcm-tang-thu-16-ty-sau-1-thang-2161420.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/binh-duong-co-4-du-an-nha-o-xa-hoi-muon-vay-goi-120-000-ty-dong-2161293.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/ha-nam-sap-dau-gia-171-lo-dat-khoi-diem-tu-4-trieu-dong-m2-2161236.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/bac-giang-sap-co-sieu-do-thi-san-golf-hon-6-000-ty-dong-tren-nui-2161091.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/nhieu-tinh-coi-troi-cho-tach-thua-dat-nen-co-soi-dong-tro-lai-2160606.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/lo-dien-nha-dau-tu-loat-du-an-do-thi-moi-o-thanh-hoa-2160585.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/mac-can-tien-ty-theo-vanh-dai-4-loat-du-an-khung-khap-bac-nam-cua-apec-group-2160623.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/quy-dat-khu-cong-nghiep-nghin-ha-ven-ha-noi-cho-dai-bang-2160409.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/loat-du-an-bat-dong-san-bi-thanh-tra-giao-dich-nha-dat-soi-dong-tro-lai-2160137.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/ninh-binh-sap-dau-gia-hang-chuc-lo-dat-khoi-diem-cao-nhat-21-3-trieu-dong-m2-2160262.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/tt-hue-chi-hon-1-000-ty-dong-xay-cau-vuot-qua-dam-pha-lon-nhat-dong-nam-a-2160258.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/giao-dich-dat-nen-khanh-hoa-tang-hon-100-can-chung-cu-duoc-chot-2160042.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/gan-17-ty-dong-cho-4-giao-dich-nha-o-xa-hoi-o-da-lat-2160051.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/bat-dong-san-xuong-day-he-lo-phan-khuc-phuc-hoi-2159967.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/bat-dong-san-page0>
+{'Topic': '/gia-dat-trung-tam-tp-hcm-tang-cao-nguoi-dan-co-xu-huong-ve-vung-ven-2159711.html'}
+2023-07-06 23:53:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/suc-khoe-page0> (referer: None)
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/phu-nao-sau-con-sot-cao-co-giat-vi-mac-hoi-chung-hhe-hiem-gap-2162323.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/an-tiet-canh-nem-chao-khien-nguoi-dan-ong-co-giat-dong-kinh-2162322.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/vo-hanh-phuc-khi-co-the-hien-than-cho-chong-2162216.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/nguoi-dan-ong-bi-dut-lia-ban-chan-o-mien-tay-2162331.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/bong-rop-da-sau-khi-dap-trung-kien-ba-khoang-2161834.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/cach-tinh-vien-phi-lac-hau-o-viet-nam-2161835.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/dong-nai-co-giam-doc-so-y-te-sau-hon-mot-nam-trong-ghe-2162143.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/nguoi-dan-ong-bi-ran-luc-can-luc-rang-sang-lien-mang-ca-con-ran-den-vien-2162086.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/be-trai-21-thang-qua-doi-nghi-do-tay-chan-mieng-2162116.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/mac-ung-thu-gan-vi-bi-viem-gan-b-nhung-khong-dieu-tri-theo-doi-thuong-xuyen-2161911.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/5-phut-to-chuc-ca-dai-phau-cap-cuu-nam-thanh-nien-vo-tim-2161957.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/be-1-tuoi-bi-cao-huyet-ap-va-viem-phe-quan-phoi-2161931.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/ton-hon-tram-trieu-dong-khi-dieu-tri-uon-van-khong-co-bao-hiem-y-te-2161946.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/thanh-nien-bi-xoan-tinh-hoan-hoai-tu-mot-ben-va-phai-cat-bo-2161915.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/quang-cao-thuc-pham-bao-ve-suc-khoe-sai-su-that-gay-buc-xuc-trong-du-luan-2162052.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/hang-dai-dong-nghiep-benh-nhan-dua-tien-bac-si-nguyen-huu-phuc-doan-duong-cuoi-2161838.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/ca-nuoc-chi-co-700-bac-si-hoi-suc-cap-cuu-vi-sao-nen-noi-2160330.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/thoi-tiet-nang-nong-lam-quy-luat-bung-phat-dich-sot-xuat-huyet-bi-pha-vo-2161705.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/nhung-mon-an-khong-nen-ket-hop-voi-nhau-vi-se-gay-hai-cho-suc-khoe-2161480.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/nguoi-phu-nu-bi-sot-chi-khau-tren-mat-sau-khi-lam-dep-het-60-trieu-dong-2161720.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/cac-benh-vien-se-khong-con-phai-mua-dao-mo-rach-3-lan-moi-qua-da-2161702.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/nguoi-phu-nu-vo-hau-mon-khi-thai-doc-ruot-bang-phuong-phap-thut-thao-ca-phe-2161572.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/hanh-trinh-ky-dieu-cua-em-be-chao-doi-nang-400g-lot-thom-trong-ban-tay-bac-si-2161549.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/be-so-sinh-bat-dong-nhom-mau-abo-voi-me-dan-den-bi-vang-da-tan-huyet-2161556.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/suc-khoe-page0>
+{'Topic': '/bac-si-nan-ni-gia-dinh-cho-phep-duoc-cuu-em-be-9-phan-tu-vong-2161611.html'}
+2023-07-06 23:53:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/dan-toc-ton-giao-page0> (referer: None)
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/nhung-chien-si-quan-ham-xanh-miet-mai-hoc-tieng-bru-van-kieu-2157297.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/soc-trang-gin-giu-phat-huy-cac-gia-tri-van-hoa-dan-toc-trong-thoi-ky-hoi-nhap-2159151.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/bao-ton-nghe-thuat-du-ke-doc-dao-cua-nguoi-khmer-2157658.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/soc-trang-thuc-hien-tot-chinh-sach-dan-toc-ton-giao-2157321.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/hoi-nghi-nghi-sy-tre-toan-cau-lan-thu-9-2157643.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/nguoi-co-uy-tin-luc-luong-nong-cot-trong-cac-phong-trao-thi-dua-tinh-soc-trang-2156584.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/tao-quy-dat-de-giao-cho-dong-bao-dtts-con-thieu-dat-o-dat-san-xuat-2162313.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/quy-dinh-viec-dat-hang-cap-an-pham-bao-tap-chi-cho-vung-dong-bao-dtts-va-mn-2161368.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/tiet-hoc-noi-cot-moc-bien-gioi-2155992.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/hanh-trinh-thu-vien-dien-tu-den-voi-chang-trai-nguoi-h-mong-2155261.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/thuc-day-cong-tac-truyen-thong-quang-ba-vn-ra-nuoc-ngoai-theo-cach-lam-moi-2155782.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/phat-dong-cuoc-thi-anh-video-happy-vietnam-2023-2154969.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/chuyen-tham-dac-biet-cua-vi-tuong-hai-quan-den-gia-dinh-chien-sy-truong-sa-2153755.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/nhung-nguoi-bao-ton-gin-giu-net-chu-co-xua-o-nam-dinh-2154156.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/tuong-duong-nghe-an-mo-lop-truyen-day-nhac-cu-dan-toc-mien-phi-cho-gioi-tre-2154706.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/de-xuat-goi-chinh-sach-ho-tro-phu-nu-dan-toc-thieu-so-sinh-de-an-toan-2162354.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/vuong-mac-lien-quan-phan-dinh-xa-thon-vung-dong-bao-dtts-mien-nui-2151714.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/ban-giao-he-thong-cong-trinh-ve-sinh-nuoc-sach-cho-nguoi-dan-bien-gioi-2150720.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/dai-le-phat-dan-2023-nguyen-cau-cho-quoc-thai-dan-an-hoa-binh-phat-trien-2150714.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/vinh-quang-to-quoc-viet-nam-2150390.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/nhieu-hoat-dong-dac-sac-mung-phat-dan-tai-dai-bao-thap-mandala-tay-thien-2150434.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/tang-cuong-vai-tro-cua-nu-sy-quan-canh-sat-trong-gin-giu-hoa-binh-quoc-te-2149097.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/quan-he-viet-nam-israel-phat-trien-manh-me-nhat-la-kinh-te-va-cong-nghe-2149082.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/ha-giang-vung-phen-giau-vung-chac-cua-to-quoc-2148187.html'}
+2023-07-06 23:53:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/dan-toc-ton-giao-page0>
+{'Topic': '/day-manh-phong-trao-toan-dan-bao-ve-an-ninh-to-quoc-trong-tinh-hinh-moi-2149399.html'}
+2023-07-06 23:53:01 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-06 23:53:01 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 4759,
+ 'downloader/request_count': 16,
+ 'downloader/request_method_count/GET': 16,
+ 'downloader/response_bytes': 2363306,
+ 'downloader/response_count': 16,
+ 'downloader/response_status_count/200': 16,
+ 'elapsed_time_seconds': 12.809879,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 53, 1, 621199),
+ 'item_scraped_count': 375,
+ 'log_count/DEBUG': 394,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82169856,
+ 'memusage/startup': 82169856,
+ 'response_received_count': 16,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 15,
+ 'scheduler/dequeued/memory': 15,
+ 'scheduler/enqueued': 15,
+ 'scheduler/enqueued/memory': 15,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 52, 48, 811320)}
+2023-07-06 23:53:01 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-06 23:54:52 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-06 23:54:52 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-06 23:54:52 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-06 23:54:52 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-06 23:54:52 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-06 23:54:52 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-06 23:54:52 [scrapy.extensions.telnet] INFO: Telnet Password: b3afdf1f287fa7f6
+2023-07-06 23:54:52 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-06 23:54:52 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-06 23:54:52 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-06 23:54:52 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-06 23:54:52 [scrapy.core.engine] INFO: Spider opened
+2023-07-06 23:54:52 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-06 23:54:52 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-06 23:54:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-06 23:54:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-tp-ha-noi-chac-chan-se-co-chuyen-bien-tich-cuc-trong-chuyen-doi-so-2162097.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-gia-tang-noi-dia-hoa-vu-khi-trang-bi-va-san-pham-quoc-phong-2161952.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/dam-noi-dam-lam-nhung-phai-noi-dung-lam-dung-2162430.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-nuoc-vo-van-thuong-chu-tri-lam-viec-ve-giai-quyet-ho-so-an-tu-hinh-2162138.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/nguyen-truong-ban-to-chuc-trung-uong-le-phuoc-tho-tu-tran-2162325.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/ha-noi-xac-dinh-chuyen-doi-so-de-tao-dot-pha-trong-qua-trinh-phat-trien-2161766.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/pho-thu-tuong-tran-luu-quang-thuc-hien-dong-bo-giai-phap-de-tngt-giam-ben-vung-2162120.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-yeu-cau-bo-sung-noi-dung-sap-nhap-huyen-xa-vao-quy-hoach-tinh-2161739.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-pham-minh-chinh-du-hoi-nghi-quan-chinh-toan-quan-2161731.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/sap-nhap-huyen-xa-gap-vuong-voi-quy-hoach-tinh-2161667.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/hai-kich-ban-tang-truong-gdp-6-thang-cuoi-nam-2161532.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tp-hcm-kien-nghi-chinh-phu-giao-bien-che-theo-tung-giai-doan-va-co-cau-dan-so-2161444.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tuyen-giao-phai-du-bao-tham-muu-tinh-hinh-kip-thoi-2161448.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-nuoc-vo-van-thuong-tham-gia-ban-thuong-vu-quan-uy-trung-uong-2161171.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-khong-noi-khong-khong-noi-kho-khong-noi-co-ma-khong-lam-2161706.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-chu-tri-hoi-nghi-truc-tuyen-toan-quoc-chinh-phu-voi-cac-dia-phuong-2161431.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/nu-pho-tong-thu-ky-lien-hop-quoc-viet-nam-se-tro-thanh-hinh-mau-cho-phat-trien-2161314.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/ngoai-giao-kinh-te-can-tranh-thu-moi-co-hoi-de-thuc-day-cac-dong-luc-tang-truong-2161352.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chu-tich-quoc-hoi-de-nghi-ha-noi-som-hien-thuc-hoa-quy-hoach-phan-khu-song-hong-2161106.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tong-bi-thu-nguyen-phu-trong-chu-tri-hoi-nghi-quan-uy-trung-uong-lan-thu-sau-2161062.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/tong-bi-thu-ren-luyen-can-bo-quan-doi-theo-tinh-than-7-dam-2161246.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/chan-dung-4-pho-giam-doc-vua-duoc-bo-cong-an-dieu-dong-bo-nhiem-2161124.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/thu-tuong-yeu-cau-chu-dong-phong-chong-sat-lo-truoc-va-trong-mua-mua-lu-2160835.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/bi-thu-ha-noi-tinh-trang-thieu-truong-hoc-se-dan-duoc-khac-phuc-2160578.html'}
+2023-07-06 23:54:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': '/bi-thu-huyen-uy-cu-m-gar-lam-chanh-van-phong-tinh-uy-dak-lak8-2161144.html'}
+2023-07-06 23:54:57 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-06 23:54:57 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 589,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 158636,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 5.346967,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 16, 54, 57, 923247),
+ 'item_scraped_count': 25,
+ 'log_count/DEBUG': 30,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82182144,
+ 'memusage/startup': 82182144,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 7, 6, 16, 54, 52, 576280)}
+2023-07-06 23:54:57 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-07 00:02:52 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-07 00:02:52 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-07 00:02:52 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-07 00:02:52 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-07 00:02:52 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-07 00:02:52 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-07 00:02:52 [scrapy.extensions.telnet] INFO: Telnet Password: dfb2198b9ecd8139
+2023-07-07 00:02:52 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-07 00:02:52 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-07 00:02:52 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-07 00:02:52 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-07 00:02:52 [scrapy.core.engine] INFO: Spider opened
+2023-07-07 00:02:52 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-07 00:02:52 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-07 00:02:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-07 00:02:59 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-07 00:02:59 [scrapy.core.scraper] ERROR: Spider error processing <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+Traceback (most recent call last):
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/utils/defer.py", line 260, in iter_errback
+    yield next(it)
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/utils/python.py", line 336, in __next__
+    return next(self.data)
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/utils/python.py", line 336, in __next__
+    return next(self.data)
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/spidermiddlewares/offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/spidermiddlewares/referer.py", line 352, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+  File "/home/canada/.local/lib/python3.10/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/home/canada/DATN_CND/DATN/crawler/crawler/spiders/vietnamnet_url.py", line 50, in parse
+    lst_news.expand(response.css("h3.horizontalPost__main-title.vnn-title.title-bold a::attr(href)").getall())
+AttributeError: 'list' object has no attribute 'expand'
+2023-07-07 00:02:59 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-07 00:02:59 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 589,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 158636,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 6.960009,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 17, 2, 59, 842074),
+ 'log_count/DEBUG': 5,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82206720,
+ 'memusage/startup': 82206720,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/AttributeError': 1,
+ 'start_time': datetime.datetime(2023, 7, 6, 17, 2, 52, 882065)}
+2023-07-07 00:02:59 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-07-07 00:04:00 [scrapy.utils.log] INFO: Scrapy 2.9.0 started (bot: crawler)
+2023-07-07 00:04:00 [scrapy.utils.log] INFO: Versions: lxml 4.9.2.0, libxml2 2.9.14, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.1, Twisted 22.4.0, Python 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0], pyOpenSSL 22.0.0 (OpenSSL 3.0.2 15 Mar 2022), cryptography 3.4.8, Platform Linux-5.19.0-46-generic-x86_64-with-glibc2.35
+2023-07-07 00:04:00 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'crawler',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'log1.txt',
+ 'NEWSPIDER_MODULE': 'crawler.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408],
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['crawler.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-07-07 00:04:00 [asyncio] DEBUG: Using selector: EpollSelector
+2023-07-07 00:04:00 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-07-07 00:04:00 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-07-07 00:04:00 [scrapy.extensions.telnet] INFO: Telnet Password: 0ebedcc40a803b53
+2023-07-07 00:04:00 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-07-07 00:04:00 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'crawler.proxies.ProxiesMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-07-07 00:04:00 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-07-07 00:04:00 [scrapy.middleware] INFO: Enabled item pipelines:
+['crawler.pipelines.CrawlerPipeline']
+2023-07-07 00:04:00 [scrapy.core.engine] INFO: Spider opened
+2023-07-07 00:04:00 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-07-07 00:04:00 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-07-07 00:04:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/robots.txt> (referer: None)
+2023-07-07 00:04:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://vietnamnet.vn/chinh-tri-page0> (referer: None)
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//viet-nam-bac-bo-y-kien-ky-thi-sac-toc-trong-vu-viec-tai-dak-lak-2162509.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//bo-ngoai-giao-len-tieng-viec-btc-dem-dien-black-pink-ung-ho-duong-luoi-bo-2162494.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//ba-truong-thi-mai-can-bo-giu-vi-tri-cang-cao-thi-cang-phai-guong-mau-2162376.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//thu-tuong-tra-loi-kien-nghi-dia-phuong-truoc-15-7-khong-de-cham-tre-hon-nua-2162148.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//dang-nha-nuoc-va-nhan-dan-khong-bao-gio-quen-nhung-nguoi-co-cong-voi-to-quoc-2162434.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//chu-tich-tp-ha-noi-chac-chan-se-co-chuyen-bien-tich-cuc-trong-chuyen-doi-so-2162097.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//thu-tuong-gia-tang-noi-dia-hoa-vu-khi-trang-bi-va-san-pham-quoc-phong-2161952.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//dam-noi-dam-lam-nhung-phai-noi-dung-lam-dung-2162430.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//chu-tich-nuoc-vo-van-thuong-chu-tri-lam-viec-ve-giai-quyet-ho-so-an-tu-hinh-2162138.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//nguyen-truong-ban-to-chuc-trung-uong-le-phuoc-tho-tu-tran-2162325.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//ha-noi-xac-dinh-chuyen-doi-so-de-tao-dot-pha-trong-qua-trinh-phat-trien-2161766.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//pho-thu-tuong-tran-luu-quang-thuc-hien-dong-bo-giai-phap-de-tngt-giam-ben-vung-2162120.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//thu-tuong-yeu-cau-bo-sung-noi-dung-sap-nhap-huyen-xa-vao-quy-hoach-tinh-2161739.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//thu-tuong-pham-minh-chinh-du-hoi-nghi-quan-chinh-toan-quan-2161731.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//sap-nhap-huyen-xa-gap-vuong-voi-quy-hoach-tinh-2161667.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//hai-kich-ban-tang-truong-gdp-6-thang-cuoi-nam-2161532.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//tp-hcm-kien-nghi-chinh-phu-giao-bien-che-theo-tung-giai-doan-va-co-cau-dan-so-2161444.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//tuyen-giao-phai-du-bao-tham-muu-tinh-hinh-kip-thoi-2161448.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//chu-tich-nuoc-vo-van-thuong-tham-gia-ban-thuong-vu-quan-uy-trung-uong-2161171.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//thu-tuong-khong-noi-khong-khong-noi-kho-khong-noi-co-ma-khong-lam-2161706.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//thu-tuong-chu-tri-hoi-nghi-truc-tuyen-toan-quoc-chinh-phu-voi-cac-dia-phuong-2161431.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//nu-pho-tong-thu-ky-lien-hop-quoc-viet-nam-se-tro-thanh-hinh-mau-cho-phat-trien-2161314.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//ngoai-giao-kinh-te-can-tranh-thu-moi-co-hoi-de-thuc-day-cac-dong-luc-tang-truong-2161352.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//chu-tich-quoc-hoi-de-nghi-ha-noi-som-hien-thuc-hoa-quy-hoach-phan-khu-song-hong-2161106.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//tong-bi-thu-nguyen-phu-trong-chu-tri-hoi-nghi-quan-uy-trung-uong-lan-thu-sau-2161062.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//tong-bi-thu-ren-luyen-can-bo-quan-doi-theo-tinh-than-7-dam-2161246.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//chan-dung-4-pho-giam-doc-vua-duoc-bo-cong-an-dieu-dong-bo-nhiem-2161124.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//thu-tuong-yeu-cau-chu-dong-phong-chong-sat-lo-truoc-va-trong-mua-mua-lu-2160835.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//bi-thu-ha-noi-tinh-trang-thieu-truong-hoc-se-dan-duoc-khac-phuc-2160578.html'}
+2023-07-07 00:04:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://vietnamnet.vn/chinh-tri-page0>
+{'Topic': 'https://vietnamnet.vn//bi-thu-huyen-uy-cu-m-gar-lam-chanh-van-phong-tinh-uy-dak-lak8-2161144.html'}
+2023-07-07 00:04:08 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-07-07 00:04:08 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 589,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 158636,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 8.104921,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 7, 6, 17, 4, 8, 872417),
+ 'item_scraped_count': 30,
+ 'log_count/DEBUG': 35,
+ 'log_count/INFO': 10,
+ 'memusage/max': 82235392,
+ 'memusage/startup': 82235392,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 7, 6, 17, 4, 0, 767496)}
+2023-07-07 00:04:08 [scrapy.core.engine] INFO: Spider closed (finished)

@@ -11,4 +11,4 @@ class ProxiesMiddleware(object):
 
     def process_request(self, request, spider):
         request.meta['proxy'] = "http://p.webshare.io:80"
-        request.headers['Proxy-Authorization'] = basic_auth_header("ikkzgekm-rotate", "q7i935i3vbnq")
+        request.headers['Proxy-Authorization'] = basic_auth_header("ltyaszoc-rotate", "mhw092eawi3z")
