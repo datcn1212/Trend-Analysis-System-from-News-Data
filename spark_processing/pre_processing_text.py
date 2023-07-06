@@ -14,7 +14,7 @@ def preprocessing(text):
     tagg = tags[1]
     kw = []
     for i in range(len(tagg)):
-        if tagg[i].startswith('N') or tagg[i].startswith('Np') or tagg[i].startswith('V') or tagg[i].startswith('A'):
+        if tagg[i].startswith('N') or tagg[i].startswith('Np') :
             kw.append(token[i])
     return ' '.join(kw)
 
