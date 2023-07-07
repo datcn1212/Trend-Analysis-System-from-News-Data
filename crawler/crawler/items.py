@@ -17,5 +17,6 @@ class CrawlerItem(scrapy.Item):
     Description = scrapy.Field()
     Body = scrapy.Field()
     Comment = scrapy.Field()
+    formatted_date = scrapy.Field()
     
 

@@ -80,9 +80,10 @@ class CrawlerSpider(Spider):
         date_part = date.split(", ")[1]
         date = datetime.datetime.strptime(date_part, "%d/%m/%Y")
         formatted_date= date.strftime("%Y%m%d")
+        item['formatted_date'] = formatted_date
 
-        # date after 1/5/2023
-        if formatted_date >= '20230501':
+        # date after 1/6/2023
+        if formatted_date >= '20230601':
             if title not in self.title_lst:
                 self.title_lst.append(title)
                 yield item
