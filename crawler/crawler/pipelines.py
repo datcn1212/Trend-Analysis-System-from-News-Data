@@ -40,26 +40,30 @@ class CrawlerPipeline:
         self.spark.stop()
 
     def process_item(self, item, spider):
-        adapter = ItemAdapter(item)
-        error_lst = ["", " ", ", ", None]
-        if adapter.get("Body") in error_lst:
-            raise DropItem(f"Missing body in {item}")
-        else:
-            item_line = json.dumps(ItemAdapter(item).asdict(), ensure_ascii=False) 
-            self.file1.write(item_line+ ",\n")
+        try:
+            adapter = ItemAdapter(item)
+            error_lst = ["", " ", ", ", None]
+            if adapter.get("Body") in error_lst:
+                raise DropItem(f"Missing body in {item}")
+            else:
+                item_line = json.dumps(ItemAdapter(item).asdict(), ensure_ascii=False) 
+                self.file1.write(item_line+ ",\n")
+                
+                i = ItemAdapter(item).asdict()
+
+                self.file.write(i['Href']+ "\n")
+
+                date_part = i['formatted_date']
+                date = datetime.datetime.strptime(date_part, "%Y%m%d")
+                year = str(date.year)
+                month = str(date.month)
+                day = str(date.day)
+
+                hdfs_path = "hdfs://localhost:9000/newsData/" + year + "/" + month + "/" + day 
+
+                df = self.spark.createDataFrame([i], self.schema)
+                df.write.mode("append").json(hdfs_path)
+                return item
+        except Exception:
+            pass
             
-            i = ItemAdapter(item).asdict()
-
-            self.file.write(i['Href']+ "\n")
-
-            date_part = i['formatted_date']
-            date = datetime.datetime.strptime(date_part, "%Y%m%d")
-            year = str(date.year)
-            month = str(date.month)
-            day = str(date.day)
-
-            hdfs_path = "hdfs://localhost:9000/newsData/" + year + "/" + month + "/" + day 
-
-            df = self.spark.createDataFrame([i], self.schema)
-            df.write.mode("append").json(hdfs_path)
-            return item

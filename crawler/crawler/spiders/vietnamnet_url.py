@@ -57,44 +57,46 @@ class CrawlerSpider(Spider):
             yield scrapy.Request(news, self.parse_news)
 
     def parse_news(self, response):
-        topic = response.css(
-            'div.bread-crumb-detail.sm-show-time ul li a::attr(title)').extract_first()
-        title = response.css('h1.content-detail-title::text').extract_first()
-        href = response.url
-        author = response.css(
-            'p.article-detail-author__info span.name a::attr(title)').extract_first()
+        try:
+            topic = response.css(
+                'div.bread-crumb-detail.sm-show-time ul li a::attr(title)').extract_first()
+            title = response.css('h1.content-detail-title::text').extract_first()
+            href = response.url
+            author = response.css(
+                'p.article-detail-author__info span.name a::attr(title)').extract_first()
 
-        # if len(author) == 0:
-        #     author = response.css('p.author_mail strong::text').getall()
-        # if len(author) == 0:
-        #     author = response.css(
-        #         'div.width-detail-photo p strong::text').getall()
+            # if len(author) == 0:
+            #     author = response.css('p.author_mail strong::text').getall()
+            # if len(author) == 0:
+            #     author = response.css(
+            #         'div.width-detail-photo p strong::text').getall()
 
-        date = response.css(
-            'div.bread-crumb-detail__time::text').extract_first().strip()
-        description = response.css(
-            'h2.content-detail-sapo.sm-sapo-mb-0::text').extract_first()
-        body = response.css(
-            'div.maincontent.main-content p::text, div.maincontent.main-content p a::text, div.maincontent.main-content p strong::text').getall()
-        # comment = response.css('p.full_content::text').getall()
+            date = response.css(
+                'div.bread-crumb-detail__time::text').extract_first().strip()
+            description = response.css(
+                'h2.content-detail-sapo.sm-sapo-mb-0::text').extract_first()
+            body = response.css(
+                'div.maincontent.main-content p::text, div.maincontent.main-content p a::text, div.maincontent.main-content p strong::text').getall()
+            # comment = response.css('p.full_content::text').getall()
 
-        item = CrawlerItem()
-        item['Topic'] = topic
-        item['Date'] = date
-        item['Author'] = author
-        item['Title'] = title
-        item['Href'] = href
-        item['Description'] = description
-        item['Body'] = ' '.join(body).replace('\xa0', '').replace('  ', ' ')
+            item = CrawlerItem()
+            item['Topic'] = topic
+            item['Date'] = date
+            item['Author'] = author
+            item['Title'] = title
+            item['Href'] = href
+            item['Description'] = description
+            item['Body'] = ' '.join(body).replace('\xa0', '').replace('  ', ' ')
 
-        date_object = date.split(' ')[2]
-        day, month, year = date_object.split("/")
-        formatted_date = year+month+day
-        item['formatted_date'] = formatted_date
+            date_object = date.split(' ')[2]
+            day, month, year = date_object.split("/")
+            formatted_date = year+month+day
+            item['formatted_date'] = formatted_date
 
-        # # date after 1/6/2023
-        if formatted_date >= '20230601':
-            if title not in self.title_lst:
-                self.title_lst.append(title)
-                yield item
-
+            # # date after 1/6/2023
+            if formatted_date >= '20230601':
+                if title not in self.title_lst:
+                    self.title_lst.append(title)
+                    yield item
+        except Exception:
+            pass
