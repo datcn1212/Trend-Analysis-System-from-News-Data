@@ -47,10 +47,18 @@ export default function Keyword() {
   let [word, setWord] = useState("Việt Nam");
   let [searchData, setSearchData] = useState([
     {
-      Href: '',
-      Title: '<Choose one of above words>',
+      Href: "",
+      Title: "<Choose one of above words>",
     },
   ]);
+
+  let [wordByTime, setWordByTime] = useState([
+    {
+      x: "a",
+      y: 1,
+    },
+  ]);
+
 
   const handleWord = (string) => {
     setWord(string);
@@ -102,6 +110,8 @@ export default function Keyword() {
     const countTopics = CountTopicStore;
     const searchData = await countTopics.fetchSearchData(word);
     setSearchData(searchData);
+    const wordData = await countTopics.fetchCountWordByTime(word);
+    setWordByTime(wordData);
   };
 
   useEffect(() => {
@@ -158,6 +168,12 @@ export default function Keyword() {
   //     />
   //   );
   // }
+  const word_data = {
+    title: "Number of articles per Topic",
+    color: "#F05D23",
+    graph: wordByTime,
+  };
+
   const options = [
     "Thời sự",
     "Đời sống",
@@ -233,7 +249,7 @@ export default function Keyword() {
 
         <div>
           {countTopic.map((item, index) => {
-            if (index < 27) {
+            if (index < 25) {
               if (index % 9 == 0 && index != 0) {
                 return (
                   <span>
@@ -258,18 +274,34 @@ export default function Keyword() {
           })}
           &nbsp;&nbsp;&nbsp;
         </div>
-        
       </S.Analytics>
       <br></br>
-      <h3>Suggested Articles:</h3>
+      <h3>Suggested Articles for "{word}":</h3>
       <div>
-      <p>{searchData.map((item, index) => {
-        return(
-        <div>
-        <p>{index+1}. {item['Title']}</p>
-        <a href={item['Href']} target="_blank">{item['Href']}</a>
-        </div>)
-      })}</p></div>
+        <p>
+          {searchData.map((item, index) => {
+            return (
+              <div>
+                <p>
+                  {index + 1}. {item["Title"]}
+                </p>
+                <a href={item["Href"]} target="_blank">
+                  {item["Href"]}
+                </a>
+              </div>
+            );
+          })}
+        </p>
+      </div>
+      <br></br>
+      <h3>Variation of topic "{word}" over time:</h3>
+      <S.Analytics>
+      <BarChart
+        defaultColors={[word_data.color]}
+        title={word_data.title}
+        graph={word_data.graph}
+      />
+      </S.Analytics>
     </S.Container>
   );
 }

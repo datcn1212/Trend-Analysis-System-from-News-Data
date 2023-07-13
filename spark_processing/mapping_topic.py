@@ -11,10 +11,14 @@ dict = {
     'Thể thao': 'the_thao',
     'Thời sự': 'thoi_su',
     'Bất động sản': 'bat_dong_san',
-    'Số hóa': 'so-hoa'
+    'Số hóa': 'so_hoa',
+    'Chính trị': 'chinh_tri',
+    'Văn hóa': 'van_hoa',
 }
 
 dict2 = {
+    'chinh_tri': 'Chính trị',
+    'van_hoa': 'Văn hóa',
     'doi_song': 'Đời sống',
     'du_lich': 'Du lịch',
     'giai_tri': 'Giải trí',
@@ -26,6 +30,7 @@ dict2 = {
     'the_gioi': 'Thế giới',
     'the_thao': 'Thể thao',
     'thoi_su': 'Thời sự',
+    'so_hoa': 'Số hóa',
     'other_topic': 'Khác'
 }
 

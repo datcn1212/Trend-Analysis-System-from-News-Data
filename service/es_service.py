@@ -60,7 +60,7 @@ class Elastic:
                 "topics": {
                     "terms": {
                         "field": "Topic",
-                        "size": 10
+                        "size": 15
                     }
                 }
             }
@@ -81,3 +81,58 @@ class Elastic:
         }
         res = self.es.search(index=idx_name, body=query)
         return res['hits']['hits']
+
+    def exact_match_in_time(self, word, start_time, end_time, idx_name='news_data'):
+        query = {
+            "query": {
+                "bool": {
+                    "should": [
+                        {
+                            "match_phrase": {
+                                "Body": word
+                            }
+                        },
+                        {
+                            "match_phrase": {
+                                "Title": word
+                            }
+                        },
+                        {
+                            "match_phrase": {
+                                "Description": word
+                            }
+                        },
+                        {
+                            "match_phrase": {
+                                "Keyword_lst": word
+                            }
+                        }
+                    ],
+                    "minimum_should_match": 1,
+                    "must": [
+
+                        {
+                            "range": {
+                                "formatted_date": {
+                                    "gte": start_time,
+                                    "lte": end_time
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "aggs": {
+                "by_date": {
+                    "terms": {
+                        "field": "formatted_date",
+                        "size": 15,
+                        "order": {
+                            "_key": "asc"
+                        }
+                    }
+                }
+            }
+        }
+        res = self.es.search(index=idx_name, body=query)
+        return res['aggregations']['by_date']['buckets']

@@ -102,5 +102,15 @@ def search():
     return {'data': [re['_source'] for re in res[:5]]}
 
 
+@app.route('/count_word_by_time', methods=['GET'])
+def count_word_by_time():
+    word = request.args.get('word')
+    start_time = request.args.get('startTime')
+    end_time = request.args.get('endTime')
+
+    res = es.exact_match_in_time(urllib.parse.unquote(word), start_time, end_time)
+    return {'data': res}
+
+
 if __name__ == "__main__":
     app.run(debug=True)

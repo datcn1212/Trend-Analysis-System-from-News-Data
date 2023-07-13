@@ -32,7 +32,16 @@ const APIS = {
   getSearchData: (word) =>
     axios.get(`${API_ROOT}/search`, {
       params: {
-        word: encodeURIComponent(word)
+        word: encodeURIComponent(word),
+      },
+    }),
+
+  getCountWordByTime: (word, startTime, endTime) =>
+    axios.get(`${API_ROOT}/count_word_by_time`, {
+      params: {
+        word: encodeURIComponent(word),
+        startTime: startTime,
+        endTime: endTime,
       },
     }),
 };

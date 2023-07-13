@@ -3,7 +3,7 @@ import time
 import re
 from pre_processing_text import preprocessing
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 class ExtractKeywordChatGPT:
 
@@ -16,24 +16,20 @@ class ExtractKeywordChatGPT:
         return preprocessing(text)
     
     def extract_kw(self, dict, num_kw):
-        text = dict["Title"] + dict["Description"] + dict["Body"][:200]
-        # text = dict["Title"] + dict["Description"] 
+        text = dict["Title"] + dict["Description"] + dict["Body"]
         text = self.pre_processing(text)
         text = f"Trích xuất {num_kw} keywords quan trọng nhất từ đoạn văn sau, chú ý kết quả trả về chỉ bao gồm {num_kw} keywords đó và ngăn cách bởi dấu phẩy: " + text
-        self.messages.append(
-            {"role": "user", "content": text},
-        )
+        self.messages = [{"role": "user", "content": text}]
         chat = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", messages=self.messages
         )
         reply = chat.choices[0].message.content       
-        self.messages.append({"role": "assistant", "content": reply})  
+        # self.messages.append({"role": "assistant", "content": reply})  
         
-        # remove '.' from answer if exists and replace '_' by ' '
-        # reply = re.sub(r'[.]', '', reply).replace('_', ' ') 
         reply = re.sub(r'[.]', '', reply)
 
         reply_lst = reply.split(", ")
+        a = min(5, len(reply_lst))
         time.sleep(5)
-        return reply_lst
+        return reply_lst[:a]
 

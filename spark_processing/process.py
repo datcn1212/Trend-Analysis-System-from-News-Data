@@ -21,33 +21,14 @@ extract_chatgpt = ExtractKeywordChatGPT()
 index_name = "news_data"
 es.create_idx_mapping(index_name, es.news_data_mapping)
 
-# extract keywords
-hdfs_path = "hdfs://localhost:9000/newsData/2023/6/23"
-df = spark.read.json(hdfs_path)
-cnt = df.count()
-print('doc_count: ', cnt)
-pandas_df = df.toPandas()
-
-dct_lst = []
-
-for i in range(cnt):
-    tmp = pandas_df.iloc[i].to_dict()
-    try:
-        keyword_lst = extract_chatgpt.extract_kw(tmp, num_kw=10)
-        tmp['keyword_lst'] = keyword_lst  
-        dct_lst.append(tmp) 
-    except Exception:
-        tmp['keyword_lst'] = []
-        dct_lst.append(tmp)
-       
 def generator_dct():
-    for i in range(len(dct_lst)):
-        _doc = {
-            '_index': index_name,
-            '_id': hash_title(dct_lst[i]['Title']),
-            '_source': dct_lst[i]
-        }
-        yield _doc
+        for i in range(len(dct_lst)):
+            _doc = {
+                '_index': index_name,
+                '_id': hash_title(dct_lst[i]['Title']),
+                '_source': dct_lst[i]
+            }
+            yield _doc
 
 def generator_dct_topic():
     for i in range(len(dct_lst)):
@@ -63,8 +44,31 @@ def generator_dct_topic():
         }
         yield _doc2
 
-# insert to ES
-res = es.insert_bulk(generator_dct())
-res = es.insert_bulk(generator_dct_topic())
+# extract keywords
+for j in range(2,7):
+    hdfs_path = "hdfs://localhost:9000/newsData/2023/7/" + str(j)
+    print(hdfs_path)
+    df = spark.read.json(hdfs_path)
+    cnt = df.count()
+    print('doc_count: ', cnt)
+    pandas_df = df.toPandas()
+
+    dct_lst = []
+
+    for i in range(cnt):
+        tmp = pandas_df.iloc[i].to_dict()
+        try:
+            keyword_lst = extract_chatgpt.extract_kw(tmp, num_kw=5)
+            tmp['keyword_lst'] = keyword_lst  
+            dct_lst.append(tmp) 
+
+            print(i, keyword_lst)
+        except Exception:
+            tmp['keyword_lst'] = []
+            dct_lst.append(tmp)
+
+    # insert to ES
+    res = es.insert_bulk(generator_dct())
+    res = es.insert_bulk(generator_dct_topic())
 
 spark.stop()
