@@ -3,7 +3,7 @@ import time
 import re
 from pre_processing_text import preprocessing
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 class ExtractKeywordChatGPT:
 

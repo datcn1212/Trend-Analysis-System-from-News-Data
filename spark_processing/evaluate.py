@@ -17,36 +17,10 @@ es = Elastic("http://localhost:9202")
 extract_nlp = ExtractKeywordSparkNLP(spark)
 extract_chatgpt = ExtractKeywordChatGPT()
 
-# create index with mapping
-index_name = "news_data"
-es.create_idx_mapping(index_name, es.news_data_mapping)
-
-def generator_dct():
-        for i in range(len(dct_lst)):
-            _doc = {
-                '_index': index_name,
-                '_id': hash_title(dct_lst[i]['Title']),
-                '_source': dct_lst[i]
-            }
-            yield _doc
-
-def generator_dct_topic():
-    for i in range(len(dct_lst)):
-        dct = dct_lst[i]
-        _doc2 = {
-            '_index':  topic_vi_to_en(dct['Topic']),
-            '_id': hash_title(dct['Title']),
-            '_source': {
-                'Title': dct['Title'],
-                'formatted_date': dct['formatted_date'],
-                'keyword_lst': dct['keyword_lst']
-            }
-        }
-        yield _doc2
 
 # extract keywords
-for j in range(25,31):
-    hdfs_path = "hdfs://localhost:9000/newsData/2023/6/" + str(j)
+for j in range(6,7):
+    hdfs_path = "hdfs://localhost:9000/newsData/2023/7/" + str(j)
     print(hdfs_path)
     df = spark.read.json(hdfs_path)
     cnt = df.count()
@@ -55,20 +29,43 @@ for j in range(25,31):
 
     dct_lst = []
 
+    recall_lst = []
+
     for i in range(cnt):
         tmp = pandas_df.iloc[i].to_dict()
         try:
-            keyword_lst = extract_chatgpt.extract_kw(tmp, num_kw=5)
+            keyword_lst = extract_nlp.extract_kw(tmp, num_kw=5)
             tmp['keyword_lst'] = keyword_lst  
             dct_lst.append(tmp) 
 
+            # print(i, keyword_lst)
+
+            # kw_lst by ChatGPT
+            kw_lst = es.get_kw_lst_from_title(tmp['Title'])
+            # print(i, kw_lst)
+
+            keyword_lst = [keyword.lower().replace('_', ' ') for keyword in keyword_lst]
+            kw_lst = [keyword.lower().replace('_', ' ') for keyword in kw_lst]
+
+            # Calculate number of common keywords
+            common_keywords = set(keyword_lst) & set(kw_lst)
+            num_common_keywords = len(common_keywords)
+
+            # Calculate recall
+            recall = num_common_keywords / len(kw_lst)
             print(i, keyword_lst)
+            print(i, kw_lst)
+            print(f"Recall: {recall}")
+            print()
+
+            recall_lst.append(recall)
+
         except Exception:
             tmp['keyword_lst'] = []
             dct_lst.append(tmp)
 
-    # insert to ES
-    res = es.insert_bulk(generator_dct())
-    res = es.insert_bulk(generator_dct_topic())
+    print(sum(recall_lst)/len(recall_lst))
+    
+
 
 spark.stop()

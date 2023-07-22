@@ -49,7 +49,7 @@ class ExtractKeywordSparkNLP:
 
     def extract_kw(self, dict, num_kw):
         text = dict["Title"] + dict["Description"] + dict["Body"]
-        text = self.pre_processing(text)
+        # text = self.pre_processing(text)
 
         light_result = self.light_model.fullAnnotate(text)[0]
 
@@ -57,7 +57,7 @@ class ExtractKeywordSparkNLP:
                        columns = ['keywords', 'score'])
         keys_df['score'] = keys_df['score'].astype(float)
 
-        top_keywords = keys_df.drop_duplicates(subset='keywords').nlargest(num_kw, 'score')
+        top_keywords = keys_df.drop_duplicates(subset='keywords').nsmallest(num_kw, 'score')
 
         top_keywords_list = top_keywords['keywords'].tolist()
 

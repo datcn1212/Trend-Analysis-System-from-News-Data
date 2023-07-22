@@ -1,6 +1,7 @@
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
 
+
 class Elastic:
 
     def __init__(self, path) -> None:
@@ -27,7 +28,7 @@ class Elastic:
     def insert_one(self, idx_name, document, id=None):
         i = self.es.index(index=idx_name, id=id, document=document)
         return i['result']
-    
+
     def insert_bulk(self, generator):
         helpers.bulk(self.es, generator)
 
@@ -37,4 +38,14 @@ class Elastic:
     # def is_exists_idx(self, idx_name):
     #     return self.es.exists(index=idx_name)
 
-    
+    def get_kw_lst_from_title(self, title):
+        query = {
+            "query": {
+                "match_phrase": {
+                    "Title": title
+                }
+            }
+        }
+
+        res = self.es.search(index='news_data', body=query)
+        return res['hits']['hits'][0]['_source']['keyword_lst']
