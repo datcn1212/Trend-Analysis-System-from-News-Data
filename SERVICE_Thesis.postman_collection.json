@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "4bf0a03c-16dd-42d9-bbb4-d3ea07922846",
+		"name": "SERVICE_Thesis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23321967"
+	},
+	"item": [
+		{
+			"name": "topic_kw",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/topic_keywords/thoi_su?endTime=20230630 ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"topic_keywords",
+						"thoi_su"
+					],
+					"query": [
+						{
+							"key": "endTime",
+							"value": "20230630 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "count_topic",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/count_topic?startTime=20230601&endTime=20230602",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"count_topic"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "20230601"
+						},
+						{
+							"key": "endTime",
+							"value": "20230602"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all_kw",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/all_keywords?startTime=20230601&endTime=20231108",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"all_keywords"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "20230601"
+						},
+						{
+							"key": "endTime",
+							"value": "20231108"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://vnexpress.net/category/day?cateid=1001005&fromdate=1682874000&todate=1686848399&allcate=1001005&page=80",
+					"protocol": "https",
+					"host": [
+						"vnexpress",
+						"net"
+					],
+					"path": [
+						"category",
+						"day"
+					],
+					"query": [
+						{
+							"key": "cateid",
+							"value": "1001005"
+						},
+						{
+							"key": "fromdate",
+							"value": "1682874000"
+						},
+						{
+							"key": "todate",
+							"value": "1686848399"
+						},
+						{
+							"key": "allcate",
+							"value": "1001005"
+						},
+						{
+							"key": "page",
+							"value": "80"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "count Topic by time",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

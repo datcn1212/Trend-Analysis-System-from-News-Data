@@ -4,6 +4,7 @@ from scrapy.selector import Selector
 from crawler.items import CrawlerItem
 import os
 import datetime
+from datetime import timedelta
 import time
 
 BASE_URL = "https://vnexpress.net"
@@ -31,7 +32,7 @@ class CrawlerSpider(Spider):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.start_urls = []
-        self.max_page = 20
+        self.max_page = 2
         self.title_lst = []
 
         for topic in list(TOPICS_ID.keys()):
@@ -83,8 +84,8 @@ class CrawlerSpider(Spider):
             formatted_date= date.strftime("%Y%m%d")
             item['formatted_date'] = formatted_date
 
-            # date after 1/6/2023
-            if formatted_date >= '20230601':
+            # date after 
+            if formatted_date >= (datetime.datetime.now()- timedelta(days=1)).strftime('%Y%m%d') and formatted_date < datetime.datetime.now().strftime('%Y%m%d'):
                 if title not in self.title_lst:
                     self.title_lst.append(title)
                     yield item

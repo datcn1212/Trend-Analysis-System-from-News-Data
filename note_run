@@ -8,3 +8,18 @@ service:
 
 
 ui:
+
+
+spark nlp:
+
+1/7 253 - 60s - recall so voi chatgpt: 0.16
+2/7 recall 0.19
+3/7 - 0.17
+4/7 - 0.18
+5/7 - 0.17
+6/7 - 0.18
+
+
+run airflow:
+airflow webserver
+airflow scheduler
