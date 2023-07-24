@@ -99,8 +99,9 @@ export default function SearchES() {
                     {isTextVisibleArray[index] && (
                       <S.WindowContainer>
                         <S.CloseButton onClick={() => handleButtonClick(index)}>
-                          &times;
+                          Close
                         </S.CloseButton>
+                        <br></br>
                         <p>
                           <S.a2>Nội dung bài báo: {item["Title"]}</S.a2>
                           <br />

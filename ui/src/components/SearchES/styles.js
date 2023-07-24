@@ -219,11 +219,12 @@ export const WindowContainer = styled.div`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  left: 15px;
+  font-weight: bold;
   background: none;
-  border: none;
-  font-size: 18px;
+  border: 10px;
+  font-size: 13px;
   cursor: pointer;
 `;
 
