@@ -105,6 +105,7 @@ export default function SearchES() {
                         <p>
                           <S.a2>Nội dung bài báo: {item["Title"]}</S.a2>
                           <br />
+                          {item["Date"]}<br></br> <br></br>
                           {/* {item["Description"]} */}
                           {item["Body"]}
                         </p>
