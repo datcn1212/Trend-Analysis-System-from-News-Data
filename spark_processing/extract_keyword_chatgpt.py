@@ -5,6 +5,7 @@ from pre_processing_text import preprocessing
 
 openai.api_key = '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'
 
+
 class ExtractKeywordChatGPT:
 
     def __init__(self):

@@ -87,7 +87,7 @@ export const Analytics = styled.div`
   display: flex;
   border: 1px solid #ecebf5;
   border-radius: 10px;
-  height: 350px;
+  height: 450px;
   margin-bottom: 24px;
   :last-child {
     margin-bottom: 0;

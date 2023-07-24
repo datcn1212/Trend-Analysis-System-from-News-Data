@@ -43,7 +43,7 @@ function convertDateToString(date) {
 export default function Keyword() {
   let [countTopic, setCountTopic] = useState(["dat"]);
   let [Topic, setTopic] = useState("thoi_su");
-  let [startDate, setStartDate] = useState("20230624");
+  let [startDate, setStartDate] = useState("20230706");
   let [word, setWord] = useState("Việt Nam");
   let [searchData, setSearchData] = useState([
     {
@@ -101,7 +101,7 @@ export default function Keyword() {
     const countTopic = await countTopics.fetchCountTopic(
       Topic,
       startDate,
-      convertDateToString(new Date())
+      '20230707'
     );
     setCountTopic(countTopic);
   };
@@ -175,7 +175,6 @@ export default function Keyword() {
   };
 
   const options = [
-    "Thời sự",
     "Đời sống",
     "Du lịch",
     "Giải trí",
@@ -186,8 +185,9 @@ export default function Keyword() {
     "Sức khỏe",
     "Thế giới",
     "Thể thao",
+    "Thời sự",
     "Bất động sản",
-    "Số hóa",
+    "Số hóa"
   ];
 
   const options2 = ["1 day ago", "3 days ago", "1 week ago", "1 month ago"];
@@ -280,6 +280,7 @@ export default function Keyword() {
       <div>
         <p>
           {searchData.map((item, index) => {
+            if(index < 5)
             return (
               <div>
                 <p>

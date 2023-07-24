@@ -11,13 +11,22 @@ function convertDate(originalDate) {
   return formattedDate;
 }
 
-class CountTopicStore {
+function sortByFrequency(arr) {
+  const frequencyMap = arr.reduce((map, word) => {
+    map[word] = (map[word] || 0) + 1;
+    return map;
+  }, {});
+  const uniqueWords = Array.from(new Set(arr));
+  uniqueWords.sort((a, b) => frequencyMap[b] - frequencyMap[a]);
+  return uniqueWords;
+}
 
-  
+class CountTopicStore {
 
   async fetchCountTopic(topic, startTime, endTime) {
     const res = await APIS.getTopicKeywords(topic, startTime, endTime);
-    return res.data.data;
+    console.log(sortByFrequency(res.data.data))
+    return sortByFrequency(res.data.data);
   }
 
   async fetchSearchData(word) {
@@ -46,12 +55,6 @@ class CountTopicStore {
         },
       ];
     }
-    console.log(
-      res.data.data.map((item) => ({
-        x: item.key,
-        y: item.doc_count,
-      }))
-    );
 
     return res.data.data.map((item) => ({
       x: convertDate(item.key),

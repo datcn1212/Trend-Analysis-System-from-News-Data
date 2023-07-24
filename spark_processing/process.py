@@ -48,7 +48,7 @@ def generator_dct_topic():
 
 
 # extract keywords
-for j in range(18, 23):
+for j in range(7, 15):
     hdfs_path = "hdfs://localhost:9000/newsData/2023/6/" + str(j)
     print(hdfs_path)
     df = spark.read.json(hdfs_path)

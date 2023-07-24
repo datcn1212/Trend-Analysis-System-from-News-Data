@@ -88,18 +88,19 @@ def get_count_keyword():
     for hit in res:
         dict[hit['key']] = hit['doc_count']
 
-    for x in topics:
-        if x not in dict.keys():
-            dict[x] = 0
+    dict2 = {}
+    for x in dict.keys():
+        if x in topics and dict[x] != 0: 
+            dict2[x] = dict[x]
 
-    return dict
+    return dict2
 
 
 @app.route('/search', methods=['GET'])
 def search():
     word = request.args.get('word')
     res = es.full_text_search(urllib.parse.unquote(word))
-    return {'data': [re['_source'] for re in res[:5]]}
+    return {'data': [re['_source'] for re in res]}
 
 
 @app.route('/count_word_by_time', methods=['GET'])

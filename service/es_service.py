@@ -116,11 +116,7 @@ class Elastic:
                                 "formatted_date": {
                                     "gte": start_time,
                                     "lte": end_time
-                                }
-                            }
-                        }
-                    ]
-                }
+                            }}}]}
             },
             "aggs": {
                 "by_date": {

@@ -113,10 +113,13 @@ export default function Analytics() {
           </Button>
         </S.Right>
       </S.Top>
+      <br></br>
       {graphData.map((data, i) => (
         <S.Analytics key={i}>
           <S.Container1>
+          <br></br>
             <S.Top1>
+              
               <S.Wrap>
                 <h6>{data.title}</h6>
                 {/* <S.Percentage className="text-sm">{data.percentage}</S.Percentage> */}
@@ -147,6 +150,8 @@ export default function Analytics() {
                 </S.Calender>
               </S.Wrap>
             </S.Top1>
+            <br></br>
+            <br></br>
             <BarChart
               defaultColors={[data.color]}
               title={data.title}

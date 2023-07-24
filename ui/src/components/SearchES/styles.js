@@ -9,6 +9,18 @@ export const Top = styled.div`
   width: 100%;
   padding: 32px 0;
 `;
+export const a = styled.a`
+  color: teal;
+  font-weight: bold;
+  `;
+  export const a2 = styled.a`
+  color: blue;
+  font-weight: bold;
+  `;
+export const p = styled.p`
+color: black;
+`;
+
 export const Right = styled.div`
   display: flex;
   align-items: center;
@@ -164,5 +176,62 @@ export const button = styled.button`
   border: none;
   padding: 6px 10px;
   border-radius: 10px;
+  cursor: pointer;
+`;
+
+export const TextWindow = styled.div`
+margin-top: 10px;
+padding: 10px;
+background-color: #f0f0f0;
+border: 1px solid #ccc;
+border-radius: 5px;
+`;
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+export const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+export const WindowContainer = styled.div`
+  position: fixed;
+  top: 40%;
+  left: 84%;
+  transform: translate(-50%, -50%);
+  background-color: #F2E0FA;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  height: 450px;
+  z-index: 999;
+  overflow: auto; 
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+`;
+
+export const button2 = styled.button`
+  background-color: #E0F9EE;
+  color: red;
+  border: none;
+  padding: 5px 7px;
+  border-radius: 15px;
   cursor: pointer;
 `;

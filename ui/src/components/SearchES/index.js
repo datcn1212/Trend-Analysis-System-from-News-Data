@@ -23,6 +23,10 @@ export default function SearchES() {
       Title: "<Choose one of above words>",
     },
   ]);
+
+  // Create an array of states to handle visibility for each item
+  const [isTextVisibleArray, setIsTextVisibleArray] = useState([]);
+
   const handleWord = (string) => {
     setWord(string.target.value);
   };
@@ -33,6 +37,16 @@ export default function SearchES() {
     const countTopics = CountTopicStore;
     const searchData = await countTopics.fetchSearchData(word);
     setSearchData(searchData);
+
+    // Initialize isTextVisibleArray with false for each item in searchData
+    setIsTextVisibleArray(Array(searchData.length).fill(false));
+  };
+
+  // Function to handle the "Detail" button click for a specific item
+  const handleButtonClick = (index) => {
+    const updatedIsTextVisibleArray = [...isTextVisibleArray];
+    updatedIsTextVisibleArray[index] = !updatedIsTextVisibleArray[index];
+    setIsTextVisibleArray(updatedIsTextVisibleArray);
   };
 
   useEffect(() => {
@@ -75,13 +89,41 @@ export default function SearchES() {
         <p>
           {searchData.map((item, index) => {
             return (
-              <div>
-                <p>
-                  {index + 1}. {item["Title"]}
-                </p>
+              <div key={index}>
+                <S.p>
+                  {index + 1}. {item["Title"]} &nbsp;&nbsp;&nbsp;
+                  <a>
+                    <S.button2 onClick={() => handleButtonClick(index)}>
+                      Detail
+                    </S.button2>
+                    {isTextVisibleArray[index] && (
+                      <S.WindowContainer>
+                        <S.CloseButton onClick={() => handleButtonClick(index)}>
+                          &times;
+                        </S.CloseButton>
+                        <p>
+                          <S.a2>Nội dung bài báo: {item["Title"]}</S.a2>
+                          <br />
+                          {/* {item["Description"]} */}
+                          {item["Body"]}
+                        </p>
+                      </S.WindowContainer>
+                    )}
+                  </a>
+                </S.p>
+
                 <a href={item["Href"]} target="_blank">
                   {item["Href"]}
                 </a>
+                <p>
+                  Từ khóa:{" "}
+                  {item["keyword_lst"]?.map((keyword, keywordIndex) => {
+                    return (
+                      <S.a key={keywordIndex}>{keyword.replace(/_/g, " ")}; </S.a>
+                    );
+                  })}
+                </p>
+                <br />
               </div>
             );
           })}
