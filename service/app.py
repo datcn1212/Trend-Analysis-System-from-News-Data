@@ -28,7 +28,6 @@ topics = [
 
 @app.route('/all_keywords', methods=['GET'])
 def get_all_keywords():
-    # get all keywords
     start_time = request.args.get('startTime')
     end_time = request.args.get('endTime')
 
@@ -71,7 +70,6 @@ def get_topic_keywords(topic):
 
     for i in kw_lst:
         kw_lst_2.append(i.replace('_', ' '))
-    # return keywords_dct
     return {"data": kw_lst_2}
 
 

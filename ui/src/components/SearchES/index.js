@@ -24,7 +24,6 @@ export default function SearchES() {
     },
   ]);
 
-  // Create an array of states to handle visibility for each item
   const [isTextVisibleArray, setIsTextVisibleArray] = useState([]);
 
   const handleWord = (string) => {
@@ -38,11 +37,9 @@ export default function SearchES() {
     const searchData = await countTopics.fetchSearchData(word);
     setSearchData(searchData);
 
-    // Initialize isTextVisibleArray with false for each item in searchData
     setIsTextVisibleArray(Array(searchData.length).fill(false));
   };
 
-  // Function to handle the "Detail" button click for a specific item
   const handleButtonClick = (index) => {
     const updatedIsTextVisibleArray = [...isTextVisibleArray];
     updatedIsTextVisibleArray[index] = !updatedIsTextVisibleArray[index];
