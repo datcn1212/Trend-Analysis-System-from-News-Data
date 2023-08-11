@@ -47,7 +47,7 @@ for j in range(6,7):
     for i in range(cnt):
         tmp = pandas_df.iloc[i].to_dict()
         try:
-            keyword_lst = extract_tfidf.extract_kw(tmp, num_kw=5)
+            keyword_lst = extract_textrank.extract_kw(tmp, num_kw=10)
             tmp['keyword_lst'] = keyword_lst  
             dct_lst.append(tmp) 
 

@@ -76,7 +76,7 @@ export default function Keyword() {
 
   const handleStartDateChange = (string1) => {
     const string = string1.value;
-    const currentDate = new Date();
+    const currentDate = new Date(2023,6,7);
     if (string == "1 day ago") {
       const _1DaysAgo = new Date(currentDate);
       _1DaysAgo.setDate(currentDate.getDate() - 1);
