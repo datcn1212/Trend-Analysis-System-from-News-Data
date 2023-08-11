@@ -1,4 +1,4 @@
-## Bachelor Graduation Project - Trend Analysis System from News Data
+## Trend Analysis System from News Data
 
 ### Start Docker container
 * `cd` to specific folder: hadoop, elasticsearch_singlenode, spark_processing
