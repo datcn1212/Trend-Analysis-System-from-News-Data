@@ -1,3 +1,6 @@
 **/__pycache__/
 **/.github/
 .ipynb_checkpoints/
+.vscode
+.metals
+.ipynb_checkpoints
